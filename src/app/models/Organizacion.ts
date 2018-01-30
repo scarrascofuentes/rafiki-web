@@ -21,4 +21,5 @@ export class Organizacion {
     totalAlumnosMatriculados: Number;
     direccion: Direccion;
     fechaPostulacion: FechaPostulacion;
+    n?: Number;
 }

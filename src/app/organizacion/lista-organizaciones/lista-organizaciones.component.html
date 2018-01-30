@@ -1,68 +1,26 @@
-<div *ngIf="organizaciones">
-  <ul class="list-group" *ngFor="let organizacion of organizaciones.organizacion">
-    <li class="list-group-item">{{ organizacion.rbd }}</li>
-    <li class="list-group-item">{{ organizacion.nombre }}</li>
-    <li class="list-group-item">{{ organizacion.descripcion }}</li>
-    <li class="list-group-item">{{ organizacion.reconocimientoOficial }}</li>
-    <li class="list-group-item">{{ organizacion.dependencia }}</li>
-    <li class="list-group-item">{{ organizacion.sostenedor }}</li>
-    <li class="list-group-item">{{ organizacion.orientacionReligiosa }}</li>
-    <li class="list-group-item">{{ organizacion.correo }}</li>
-    <li class="list-group-item">{{ organizacion.telefono }}</li>
-    <li class="list-group-item">{{ organizacion.web }}</li>
-    <li class="list-group-item">{{ organizacion.director }}</li>
-    <li class="list-group-item">{{ organizacion.mensualidad }}</li>
-    <li class="list-group-item">{{ organizacion.numVacantes }}</li>
-    <li class="list-group-item">{{ organizacion.puntajeSimce }}</li>
-    <li class="list-group-item">{{ organizacion.promAlumnosCurso }}</li>
-    <li class="list-group-item">{{ organizacion.totalAlumnosMatriculados }}</li>
-    <li class="list-group-item">{{ organizacion.direccion.calle }}</li>
-    <li class="list-group-item">{{ organizacion.direccion.region }}</li>
-    <li class="list-group-item">{{ organizacion.direccion.comuna }}</li>
-    <li class="list-group-item">{{ organizacion.fechaPostulacion.inicio }}</li>
-    <li class="list-group-item">{{ organizacion.fechaPostulacion.cierre }}</li>
-    <br>
-    <hr>
-  </ul>
-</div>
+<button routerLink="crear">Crear Organizacion</button>
+<br>
+<br>
 
-
-
-
-<!-- <div class="card m-3">
-  <div class="card-body">
-    <form (submit)="addTask($event)">
-      <div class="input-group">
-          <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add A Task">
-          <span class="input-group-addon">
-              <button type="submit" class="btn btn-primary">
-                  Add A task
-                </button>
-          </span>
-      </div>
-      </form>
-  </div>
-</div>
-
-<table class="table text-center table-hover">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Title</th>
-      <th>Operations</th>
+      <th scope="col">Rbd</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Detalles</th>
+      <th scope="col">Editar/Eliminar</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let task of tasks">
+  
+  <tbody *ngIf="organizaciones">
+    <tr *ngFor="let organizacion of organizaciones.organizacion">
+      <th scope="row">{{ organizacion.rbd }}</th>
+      <td>{{ organizacion.nombre }}</td>
+      <td><button routerLink="/organizacion/{{organizacion._id}}"> <i class="fas fa-info-circle"></i> Ver Detalles  </button></td>
       <td>
-        <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
-      </td>
-      <td>{{ task.title }}</td>
-      <td>
-        <button class="btn btn-danger" (click)="deleteTask(task._id)">
-          <i class="fa fa-trash"></i>
-        </button>
+          <button routerLink="/organizacion/{{organizacion._id}}/editar"> <i class="fas fa-edit"></i> Editar </button>
+          <button routerLink="#"> <i class="fas fa-trash-alt"></i> Eliminar </button>
       </td>
     </tr>
   </tbody>
-</table> -->
+</table>

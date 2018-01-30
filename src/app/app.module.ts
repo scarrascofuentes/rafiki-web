@@ -7,18 +7,26 @@ import { OrganizacionService } from './organizacion/services/organizacion.servic
 
 import { AppComponent } from './app.component';
 import { ListaOrganizacionesComponent } from './organizacion/lista-organizaciones/lista-organizaciones.component';
+import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/crear-organizacion.component';
+import { ModificarOrganizacionComponent } from './organizacion/modificar-organizacion/modificar-organizacion.component';
+import { DetallesOrganizacionComponent } from './organizacion/detalles-organizacion/detalles-organizacion.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaOrganizacionesComponent,
+    CrearOrganizacionComponent,
+    ModificarOrganizacionComponent,
+    DetallesOrganizacionComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [OrganizacionService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
