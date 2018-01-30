@@ -1,0 +1,314 @@
+<!-- <form>
+  <div class="form-group">
+    <label for="inputAsignatura">Asignatura</label>
+    <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura">
+    <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="inputSiglaCurso">Sigla Curso</label>
+    <input type="text" class="form-control" id="inputSiglaCurso" aria-describedby="siglaCursoHelp" placeholder="Ingrese sigla">
+    <small id="siglaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="inputNivel">Nivel</label>
+    <input type="text" class="form-control" id="inputNivel" aria-describedby="nivelHelp" placeholder="Ingrese nivel">
+    <small id="nivelHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="inputProfesorJefe">Profesor Jefe</label>
+    <input type="text" class="form-control" id="inputProfesorJefe" aria-describedby="emailHelp" placeholder="Ingrese profesor jefe">
+    <small id="profesotJefeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="inputSalaCurso">Sala del curso</label>
+    <input type="text" class="form-control" id="inputSalaCurso" aria-describedby="salaCursoHelp" placeholder="Ingrese sala del curso">
+    <small id="salaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+
+<div *ngIf="!idCurso; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="from-container">
+      <div class="row columns">
+        <h1>El johann se la come</h1>
+
+        <label>Sigla
+          <input type="text" formControlName="idCurso">
+        </label>
+
+        <label>Nivel
+          <input type="text" formControlName="nivel">
+        </label>
+
+        <label>Asignatura
+          <input type="text" formControlName="asignatura">
+        </label>
+
+        <label>Profesor Jefe
+          <input type="text" formControlName="profesorJefe">
+        </label>
+
+        <label>Sala Curso
+          <input type="text" formControlName="salaCurso">
+        </label>
+
+        <label>total Alumnos
+          <input type="text" formControlName="totalAlumnos">
+        </label>
+        <label for="validate">dfsfsdffd</label>
+        <input type="checkbox" name="validate" formControlIdCurso="validate" value="1"> on
+
+        <input type="submit" class="button expanded" value="Crear" [disabled]="!rForm.valid">
+
+        <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Submit</button>
+
+      </div>
+    </div>
+  </form>
+</div>
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row comuns">
+      <h1> {{idCurso}} 
+          {{ nivel }}
+      </h1>
+      <h1> {{ salaCurso }} </h1>
+      <P> {{ nivel }}</P>
+    </div>
+  </div>
+</ng-template>
+
+<div class="form-group">
+  <label for="inputAsignatura">Asignatura</label>
+  <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura">
+  <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+
+<!--/col-->
+<div class="col-md-8 offset-md-2">
+  <span class="anchor" id="formUserEdit"></span>
+  <hr class="my-5">
+
+  <!-- form user info -->
+  <div class="card card-outline-secondary">
+    <div class="card-header">
+      <h3 class="mb-0">User Information</h3>
+    </div>
+    <div class="card-block">
+      <form class="form" role="form" autocomplete="off">
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Asignatura</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="text" value="Jane">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="text" value="Bishop">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Email</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="email" value="email@gmail.com">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Company</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="text" value="">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Website</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="url" value="">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+          <div class="col-lg-9">
+            <select id="user_time_zone" class="form-control" size="0">
+              <option value="Hawaii">(GMT-10:00) Hawaii</option>
+              <option value="Alaska">(GMT-09:00) Alaska</option>
+              <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+              <option value="Arizona">(GMT-07:00) Arizona</option>
+              <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+              <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+              <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+              <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Username</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="text" value="janeuser">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Password</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="password" value="11111122333">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+          <div class="col-lg-9">
+            <input class="form-control" type="password" value="11111122333">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"></label>
+          <div class="col-lg-9">
+            <input type="reset" class="btn btn-secondary" value="Cancel">
+            <input type="submit" class="btn btn-primary" value="Crear" [disabled]="!rForm.valid">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- /form user info -->
+
+</div>
+
+
+
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+  <div class="col-6 col-md-2"></div>
+  <div class="col-6 col-md-8">
+    <div *ngIf="!idCurso; else forminfo">
+      <div class="card-header">
+        <h1>Crear Curso</h1>
+        <hr>
+        <div class="card-body">
+          <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+            <div class="form-group">
+              <label for="inputAsignatura">Asignatura</label>
+              <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura"
+                formControlName="asignatura">
+              <!-- <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="inputSiglaCurso">Sigla Curso</label>
+              <input type="text" class="form-control" id="inputSiglaCurso" aria-describedby="siglaCursoHelp" placeholder="Ingrese sigla"
+                formControlName="idCurso">
+              <small id="siglaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="inputNivel">Nivel</label>
+              <input type="text" class="form-control" id="inputNivel" aria-describedby="nivelHelp" placeholder="Ingrese nivel" formControlName="nivel">
+              <small id="nivelHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="inputProfesorJefe">Profesor Jefe</label>
+              <input type="text" class="form-control" id="inputProfesorJefe" aria-describedby="emailHelp" placeholder="Ingrese profesor jefe"
+                formControlName="profesorJefe">
+              <small id="profesotJefeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="inputSalaCurso">Sala del curso</label>
+              <input type="text" class="form-control" id="inputSalaCurso" aria-describedby="salaCursoHelp" placeholder="Ingrese sala del curso"
+                formControlName="salaCurso">
+              <small id="salaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="inputTotalAlumnos">Total Alumnos</label>
+              <input type="email" class="form-control" id="inputTotalAlumnos" aria-describedby="totalAlumnoslHelp" placeholder="Ingrese cantidad de alumnos"
+                formControlName="totalAlumnos">
+              <small id="totalAlumnoslHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <input type="reset" class="btn btn-secondary" value="Cancel">
+            <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Submit</button>
+            <ng-template #forminfo>
+              <div class="form-container">
+                <div class="row comuns">
+                  <h1> {{idCurso}} </h1>
+                  <h1> {{ nivel }} </h1>
+                </div>
+              </div>
+            </ng-template>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-2"></div>
+</div>
+
+
+
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Secondary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Success card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Danger card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Warning card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Info card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Light card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
