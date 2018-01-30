@@ -52,87 +52,88 @@
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Información Institucional
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <div class="table-responsive-md">
-            <table class="table no-border">
-              <tr>
-                <th scope="row">Rbd:</th>
-                <td>{{ organizaciones.organizacion.rbd }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Descripcion:</th>
-                <td>{{ organizaciones.organizacion.descripcion}}</td>
-              </tr>
-              <tr>
-                <th scope="row">Reconocimiento Oficial:</th>
-                <td>{{ organizaciones.organizacion.reconocimientoOficial}}</td>
-              </tr>
-              <tr>
-                <th scope="row">Dependencia:</th>
-                <td>{{ organizaciones.organizacion.dependencia }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Matricula total de Alumnos:</th>
-                <td>{{ organizaciones.organizacion.totalAlumnosMatriculados }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Promedio Alumnos por Curso:</th>
-                <td>{{ organizaciones.organizacion.promAlumnosCurso }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Orientacion Religiosa:</th>
-                <td>{{ organizaciones.organizacion.orientacionReligiosa }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Ultimo Puntaje Simce:</th>
-                <td>{{ organizaciones.organizacion.puntajeSimce }}</td>
-              </tr>
-            </table>
-          </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Información Institucional
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <div class="table-responsive-md">
+          <table class="table no-border">
+            <tr>
+              <th scope="row">Rbd:</th>
+              <td>{{ organizaciones.organizacion.rbd }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Descripcion:</th>
+              <td>{{ organizaciones.organizacion.descripcion}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Reconocimiento Oficial:</th>
+              <td>{{ organizaciones.organizacion.reconocimientoOficial}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Dependencia:</th>
+              <td>{{ organizaciones.organizacion.dependencia }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Matricula total de Alumnos:</th>
+              <td>{{ organizaciones.organizacion.totalAlumnosMatriculados }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Promedio Alumnos por Curso:</th>
+              <td>{{ organizaciones.organizacion.promAlumnosCurso }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Orientacion Religiosa:</th>
+              <td>{{ organizaciones.organizacion.orientacionReligiosa }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Ultimo Puntaje Simce:</th>
+              <td>{{ organizaciones.organizacion.puntajeSimce }}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Otros Datos
-          </button>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          <div class="table-responsive-md">
-            <table class="table no-border">
-              <tr>
-                <th scope="row">Mensualidad: </th>
-                <td>$ {{ organizaciones.organizacion.mensualidad }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Numero de vacantes:</th>
-                <td>{{ organizaciones.organizacion.numVacantes}}</td>
-              </tr>
-              <br>
-              <h5>Fecha de Postulación</h5>
-              <tr>
-                <th scope="row">Fecha Inicio:</th>
-                <td>{{ organizaciones.organizacion.fechaPostulacion.inicio }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Fecha Cierre :</th>
-                <td>{{ organizaciones.organizacion.fechaPostulacion.cierre }}</td>
-              </tr>
-            </table>
-          </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Otros Datos
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <div class="table-responsive-md">
+          <table class="table no-border">
+            <tr>
+              <th scope="row">Mensualidad: </th>
+              <td>$ {{ organizaciones.organizacion.mensualidad }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Numero de vacantes:</th>
+              <td>{{ organizaciones.organizacion.numVacantes}}</td>
+            </tr>
+            <br>
+            <h5>Fecha de Postulación</h5>
+            <tr>
+              <th scope="row">Fecha Inicio:</th>
+              <td>{{ organizaciones.organizacion.fechaPostulacion.inicio }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Fecha Cierre :</th>
+              <td>{{ organizaciones.organizacion.fechaPostulacion.cierre }}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
