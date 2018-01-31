@@ -35,6 +35,6 @@ export class OrganizacionService {
   }
 
   deleteOrganizacion(id: String) {
-    return this.http.delete(`${this.domain}/${id}`)
+    return this.http.delete(`${this.domain}/organizaciones/${id}`)
   }
 }
