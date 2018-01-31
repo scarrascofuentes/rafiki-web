@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { CrearCursoComponent } from './cursos/crear-curso/crear-curso.component';
 import { ModificarCursoComponent } from './cursos/modificar-curso/modificar-curso.component';
-import { EliminarCursoComponent } from './cursos/eliminar-curso/eliminar-curso.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DetalleCursoComponent } from './cursos/detalle-curso/detalle-curso.component';
 
@@ -19,7 +18,6 @@ import { DetalleCursoComponent } from './cursos/detalle-curso/detalle-curso.comp
     ListaCursosComponent,
     CrearCursoComponent,
     ModificarCursoComponent,
-    EliminarCursoComponent,
     DetalleCursoComponent
   ],
   imports: [

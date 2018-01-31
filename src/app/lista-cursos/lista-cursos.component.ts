@@ -1,44 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-lista-cursos',
   templateUrl: './lista-cursos.component.html',
   styleUrls: ['./lista-cursos.component.css']
 })
+
 export class ListaCursosComponent implements OnInit {
 
-  rForm: FormGroup;
-  idCurso: String = '';
-  nivel: String = '';
-  asignatura: String = '';
-  profesorJefe: String = '';
-  salaCurso: String = '';
-  totalAlumnos: Number;
+  domain: string = 'http://localhost:10010';
+  curso: any;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.rForm = formBuilder.group({
-      'idCurso': [null, Validators.required],
-      'nivel': [null, Validators.required],
-      'asignatura': [null, Validators.required],
-      'profesorJefe': [null, Validators.required],
-      'salaCurso': [null, Validators.required],
-      'totalAlumnos': [null, Validators.required],
-      'validate': ''
-    });
-
-  }
-
-  addPost(post){
-    this.idCurso = post.idCurso;
-    this.nivel = post.nivel;
-    this.asignatura = post.asignatura;
-    this.profesorJefe = post.profesorJefe;
-    this.salaCurso = post.salaCurso;
-    this.totalAlumnos = post.totalAlumnos;
+  constructor(private HttpClient: HttpClient) {
   }
 
   ngOnInit() {
+    this.HttpClient.get(`${this.domain}/cursos`).subscribe(data =>{
+      // console.log(data);
+      this.curso = data;
+    });
   }
 
 }
