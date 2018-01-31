@@ -14,8 +14,7 @@ export class CrearOrganizacionComponent implements OnInit {
   organizacion: any;
   nombre: String = '';
   descripcion: String = '';
-
-
+  mensaje: String= 'Se ha añadido correctamente la organizacion a la Base de Datos. Se le redireccionará a la pagina de inicio';
 
   constructor(    
     private route: ActivatedRoute,
@@ -41,11 +40,20 @@ export class CrearOrganizacionComponent implements OnInit {
   //   this.nombre = organizacion.nombre;
   // }
   crearOrganizacion(organizacion){
+    this.mensaje;
+    // aqui deben ir todas las variables que se mostrarar al registrar una nueva organizacion
+    this.nombre = organizacion.nombre;
+    this.descripcion = organizacion.descripcion;
+
+
     this.http.post('http://localhost:10010/organizaciones', organizacion)
     .subscribe(res => {
         let id = res['_id'];
         this.organizacion = res;
-        this.router.navigate(['/organizacion',this.organizacion._id]);
+        setTimeout(() =>{
+          //this.router.navigate(['/organizacion',this.organizacion]);
+          this.router.navigate(['/organizaciones']);
+        }, 3000)
       }, (err) => {
         console.log(err);
       }
