@@ -413,8 +413,8 @@
           <a routerLink="cursos/{{ curso._id }}/editar">
             <button type="button" class="btn btn-info">Modificar</button>
           </a>
-          <a routerLink="cursos">
-            <button type="button" class="btn btn-info">Eliminar</button>
+          <a routerLink="">
+            <button type="button" class="btn btn-info" (click)="deleteCurso(curso._id)">Eliminar</button>
           </a>
         </td>
       </tr>

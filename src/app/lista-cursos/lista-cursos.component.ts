@@ -16,11 +16,20 @@ export class ListaCursosComponent implements OnInit {
   constructor(private HttpClient: HttpClient) {
   }
 
-  ngOnInit() {
-    this.HttpClient.get(`${this.domain}/cursos`).subscribe(data =>{
-      // console.log(data);
+  getCursos() {
+    this.HttpClient.get(`${this.domain}/cursos`).subscribe(data => {
+      //console.log(data);
       this.curso = data;
     });
+  }
+  deleteCurso(id){
+    this.HttpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
+      //console.log(data);
+      this.ngOnInit();
+    });
+  }
+  ngOnInit() {
+    this.getCursos();
   }
 
 }
