@@ -1,1 +1,30 @@
-Aqui va el formulario
+<div *ngIf="!nombre; else forminfo">
+    <form [formGroup]="rForm" (ngSubmit)="crearOrganizacion(rForm.value)">
+        <div class="form-group">
+            <label>Nombre
+                <input type="text" formControlName="nombre">
+            </label>
+
+            <div class="alert" *ngIf="!rForm.controls['nombre'].valid && !rForm.controls['nombre'].touched">
+                Este campo es requerido
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Descripcion
+                <textarea formControlName="descripcion"></textarea>
+            </label>
+        </div>
+
+        <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+    </form>
+</div>
+
+
+<ng-template #forminfo>
+    <div class="form-container">
+        <h1>{{ nombre }}</h1>
+
+        <p>{{ descripcion }}</p>
+    </div>
+</ng-template>
