@@ -31,7 +31,7 @@ export class OrganizacionService {
   }
 
   updateOrganizacion(organizacion: Object, id: String) {
-    return this.http.put(`${this.domain}/${id}`, organizacion, httpOptions)
+    return this.http.put(`${this.domain}/organizaciones/${id}`, organizacion, httpOptions)
   }
 
   deleteOrganizacion(id: String) {
