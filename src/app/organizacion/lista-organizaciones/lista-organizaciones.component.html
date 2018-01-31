@@ -1,5 +1,6 @@
-<button routerLink="crear">Crear Organizacion</button>
-<br>
+<div class="col-sm-offset-2 col-sm-10">
+  <button type="button " class="btn btn-primary" routerLink="crear">Crear Organizacion</button>
+</div>
 <br>
 
 <table class="table table-hover">
@@ -16,10 +17,10 @@
     <tr *ngFor="let organizacion of organizaciones.organizacion">
       <th scope="row">{{ organizacion.rbd }}</th>
       <td>{{ organizacion.nombre }}</td>
-      <td><button routerLink="/organizacion/{{organizacion._id}}"> <i class="fas fa-info-circle"></i> Ver Detalles  </button></td>
+      <td><button type="button" class="btn btn-primary" routerLink="/organizacion/{{organizacion._id}}"> <i class="fas fa-info-circle"></i> Ver Detalles  </button></td>
       <td>
-          <button routerLink="/organizacion/{{organizacion._id}}/editar"> <i class="fas fa-edit"></i> Editar </button>
-          <button routerLink="#"> <i class="fas fa-trash-alt"></i> Eliminar </button>
+          <button type="button" class="btn btn-primary" routerLink="/organizacion/{{organizacion._id}}/editar"> <i class="fas fa-edit"></i> Editar </button>
+          <button type="button" class="btn btn-primary" routerLink="#"> <i class="fas fa-trash-alt"></i> Eliminar </button>
       </td>
     </tr>
   </tbody>
