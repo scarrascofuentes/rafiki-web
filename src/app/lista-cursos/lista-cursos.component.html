@@ -38,7 +38,7 @@
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
+</form>
 
 
 <div *ngIf="!idCurso; else forminfo">
@@ -93,18 +93,12 @@
   </div>
 </ng-template>
 
-<div class="form-group">
-  <label for="inputAsignatura">Asignatura</label>
-  <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura">
-  <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-</div>
 
-<!--/col-->
 <div class="col-md-8 offset-md-2">
   <span class="anchor" id="formUserEdit"></span>
   <hr class="my-5">
 
-  <!-- form user info -->
+ 
   <div class="card card-outline-secondary">
     <div class="card-header">
       <h3 class="mb-0">User Information</h3>
@@ -184,15 +178,14 @@
       </form>
     </div>
   </div>
-  <!-- /form user info -->
 
-</div>
-
+</div> -->
 
 
 
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-<div class="row">
+
+
+<!-- <div class="row">
   <div class="col-6 col-md-2"></div>
   <div class="col-6 col-md-8">
     <div *ngIf="!idCurso; else forminfo">
@@ -205,7 +198,7 @@
               <label for="inputAsignatura">Asignatura</label>
               <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura"
                 formControlName="asignatura">
-              <!-- <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+              <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="inputSiglaCurso">Sigla Curso</label>
@@ -252,11 +245,11 @@
     </div>
   </div>
   <div class="col-6 col-md-2"></div>
-</div>
+</div> -->
 
 
 
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<!-- <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <h5 class="card-title">Primary card title</h5>
@@ -311,4 +304,141 @@
     <h5 class="card-title">Dark card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
+</div> -->
+<!-- <div class="card">
+  <ng-container>
+
+  </ng-container>
+
 </div>
+
+<div class="row">
+  <div class="col-6 col-md-2"></div>
+  <div class="col-6 col-md-8">
+    <ng-container *ngFor="let curso of cursos">
+      <div class="card-header">
+        <h1>Crear Curso</h1>
+        <hr>
+        <div class="card-body">
+          cosas {{cursos.nivel}}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-6 col-md-2"></div>
+</div> -->
+
+
+<div *ngIf="curso">
+  <div *ngFor="let curso of curso.cursos">
+    {{ curso.idCurso }} {{ curso.nivel }} {{ curso.asignatura }} {{ curso.profesorJefe }} {{ curso.salaCurso }} {{ curso.totalAlumnos
+    }}
+  </div>
+</div>
+
+
+
+
+<!-- <div class="card m-3">
+  <div class="card-body">
+    <form (submit)="addTask($event)">
+      <div class="input-group">
+          <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add A Task">
+          <span class="input-group-addon">
+              <button type="submit" class="btn btn-primary">
+                  Add A task
+                </button>
+          </span>
+      </div>
+      </form>
+  </div>
+</div>
+
+<table class="table text-center table-hover">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Title</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>
+        <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
+      </td>
+      <td>{{ task.title }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteTask(task._id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div *ngIf="curso">
+  <div *ngFor="let curso of curso.cursos">
+    {{ curso.idCurso }} {{ curso.nivel }} {{ curso.asignatura }} {{ curso.profesorJefe }} {{ curso.salaCurso }} {{ curso.totalAlumnos
+    }}
+  </div>
+</div>
+<a routerLink="cursos/crear">
+    <button type="button" class="btn btn-primary">crear-curso</button>
+</a>
+<div *ngIf="curso">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Curso</th>
+        <th scope="col">Nivel</th>
+        <th scope="col">Asignatura</th>
+        <th scope="col">Detalle</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let curso of curso.cursos">
+        <th scope="row">1</th>
+        <td>{{ curso.idCurso }}</td>
+        <td>{{ curso.nivel }}</td>
+        <td>{{ curso.asignatura }}</td>
+        <th>
+          <a routerLink="cursos/{{ curso._id }}">
+              <button type="button" class="btn btn-info">Ver detalle</button>
+          </a>
+        </th>
+        <td>
+          <a routerLink="cursos/{{ curso._id }}/editar">
+            <button type="button" class="btn btn-info">Modificar</button>
+          </a>
+          <a routerLink="cursos">
+            <button type="button" class="btn btn-info">Eliminar</button>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- <button type="button" class="btn btn-primary" routerLink="/organizacion/{{organizacion._id}}"> <i class="fas fa-info-circle"></i> Ver Detalles  </button> -->
+
+<!-- 
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table> -->
