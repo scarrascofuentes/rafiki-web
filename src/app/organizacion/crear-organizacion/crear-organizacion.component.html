@@ -1,5 +1,9 @@
 <div *ngIf="!nombre; else forminfo">
     <form [formGroup]="rForm" (ngSubmit)="crearOrganizacion(rForm.value)">
+        <label>RBD
+            <input type="number" formControlName="rbd">
+        </label>
+
         <div class="form-group">
             <label>Nombre
                 <input type="text" formControlName="nombre">
@@ -13,6 +17,115 @@
         <div class="form-group">
             <label>Descripcion
                 <textarea formControlName="descripcion"></textarea>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Reconocimiento Oficial
+                <input type="text" formControlName="reconocimientoOficial">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Dependencia
+                <input type="text" formControlName="dependencia">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Sostenedor
+                <input type="text" formControlName="sostenedor">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Orientacion Religiosa
+                <input type="text" formControlName="orientacionReligiosa">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Correo
+                <input type="email" formControlName="correo">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Telefono
+                <input type="text" formControlName="telefono">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Pagina Web
+                <input type="url" formControlName="web">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Director
+                <input type="text" formControlName="director">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Mensualidad
+                <input type="number" formControlName="mensualidad">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Numero de vacantes
+                <input type="number" formControlName="numVacantes">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Total de alumnos Matriculados
+                <input type="number" formControlName="totalAlumnosMatriculados">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Promedio de alumnos por curso
+                <input type="number" formControlName="promAlumnosCurso">
+            </label>
+        </div>        
+
+        <div class="form-group">
+            <label>Puntaje Simce
+                <input type="number" formControlName="puntajeSimce">
+            </label>
+        </div>      
+
+        <!-- Campos donde se obtiene la direccion (calle, region, comuna)-->
+        <h5>Direccion</h5>
+        <div class="form-group">
+            <label>Calle
+                <input type="text" formControlName="direccion.calle">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Region
+                <input type="text" formControlName="direccion.region">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Comuna
+                <input type="text" formControlName="direccion.comuna">
+            </label>
+        </div>
+
+        <!-- Se obtiene la fecha inicio/cierre postulacion -->
+        <h5>Fecha Postulacion</h5>
+        <div class="form-group">
+            <label>Inicio
+                <input type="text" formControlName="fechaPostulacion.inicio">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Cierre
+                <input type="text" formControlName="fechaPostulacion.cierre">
             </label>
         </div>
 

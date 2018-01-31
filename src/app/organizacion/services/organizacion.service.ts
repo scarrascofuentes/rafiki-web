@@ -26,6 +26,10 @@ export class OrganizacionService {
     return this.http.get(url)
   }
 
+  postOrganizacion(organizacion: Object) {
+    return this.http.post(`${this.domain}/organizaciones`, organizacion)
+  }
+
   updateOrganizacion(organizacion: Object, id: String) {
     return this.http.put(`${this.domain}/${id}`, organizacion, httpOptions)
   }
