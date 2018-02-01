@@ -9,38 +9,27 @@
           <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
             <div class="form-group">
               <label for="inputAsignatura">Asignatura</label>
-              <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura"
-                formControlName="asignatura">
-              <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" placeholder="Ingrese asignatura" formControlName="asignatura">
             </div>
             <div class="form-group">
               <label for="inputSiglaCurso">Sigla Curso</label>
-              <input type="text" class="form-control" id="inputSiglaCurso" aria-describedby="siglaCursoHelp" placeholder="Ingrese sigla"
-                formControlName="idCurso">
-              <small id="siglaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" placeholder="Ingrese sigla" formControlName="idCurso">
             </div>
             <div class="form-group">
               <label for="inputNivel">Nivel</label>
-              <input type="text" class="form-control" id="inputNivel" aria-describedby="nivelHelp" placeholder="Ingrese nivel" formControlName="nivel">
-              <small id="nivelHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" placeholder="Ingrese nivel" formControlName="nivel">
             </div>
             <div class="form-group">
               <label for="inputProfesorJefe">Profesor Jefe</label>
-              <input type="text" class="form-control" id="inputProfesorJefe" aria-describedby="emailHelp" placeholder="Ingrese profesor jefe"
-                formControlName="profesorJefe">
-              <small id="profesotJefeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" placeholder="Ingrese profesor jefe" formControlName="profesorJefe">
             </div>
             <div class="form-group">
               <label for="inputSalaCurso">Sala del curso</label>
-              <input type="text" class="form-control" id="inputSalaCurso" aria-describedby="salaCursoHelp" placeholder="Ingrese sala del curso"
-                formControlName="salaCurso">
-              <small id="salaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" placeholder="Ingrese sala del curso" formControlName="salaCurso">
             </div>
             <div class="form-group">
               <label for="inputTotalAlumnos">Total Alumnos</label>
-              <input type="number" class="form-control" id="inputTotalAlumnos" aria-describedby="totalAlumnoslHelp" placeholder="Ingrese cantidad de alumnos"
-                formControlName="totalAlumnos">
-              <small id="totalAlumnoslHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="number" class="form-control" placeholder="Ingrese cantidad de alumnos" formControlName="totalAlumnos">
             </div>
             <input type="reset" class="btn btn-secondary" value="Cancel">
             <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Submit</button>
