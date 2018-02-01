@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-curso',
@@ -21,7 +21,7 @@ export class CrearCursoComponent implements OnInit {
   domain: string = 'http://localhost:10010';
   curso: any;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
     this.rForm = formBuilder.group({
       'idCurso': [null, Validators.required],
       'nivel': [null, Validators.required],
