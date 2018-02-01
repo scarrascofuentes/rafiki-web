@@ -1,100 +1,4 @@
-<!-- <form>
-  <div class="form-group">
-    <label for="inputAsignatura">Asignatura</label>
-    <input type="text" class="form-control" id="inputAsignatura" aria-describedby="asignaturaHelp" placeholder="Ingrese asignatura">
-    <small id="asignaturaHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="inputSiglaCurso">Sigla Curso</label>
-    <input type="text" class="form-control" id="inputSiglaCurso" aria-describedby="siglaCursoHelp" placeholder="Ingrese sigla">
-    <small id="siglaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="inputNivel">Nivel</label>
-    <input type="text" class="form-control" id="inputNivel" aria-describedby="nivelHelp" placeholder="Ingrese nivel">
-    <small id="nivelHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="inputProfesorJefe">Profesor Jefe</label>
-    <input type="text" class="form-control" id="inputProfesorJefe" aria-describedby="emailHelp" placeholder="Ingrese profesor jefe">
-    <small id="profesotJefeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="inputSalaCurso">Sala del curso</label>
-    <input type="text" class="form-control" id="inputSalaCurso" aria-describedby="salaCursoHelp" placeholder="Ingrese sala del curso">
-    <small id="salaCursoHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-<div *ngIf="!idCurso; else forminfo">
-  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
-    <div class="from-container">
-      <div class="row columns">
-        <h1>El johann se la come</h1>
-
-        <label>Sigla
-          <input type="text" formControlName="idCurso">
-        </label>
-
-        <label>Nivel
-          <input type="text" formControlName="nivel">
-        </label>
-
-        <label>Asignatura
-          <input type="text" formControlName="asignatura">
-        </label>
-
-        <label>Profesor Jefe
-          <input type="text" formControlName="profesorJefe">
-        </label>
-
-        <label>Sala Curso
-          <input type="text" formControlName="salaCurso">
-        </label>
-
-        <label>total Alumnos
-          <input type="text" formControlName="totalAlumnos">
-        </label>
-        <label for="validate">dfsfsdffd</label>
-        <input type="checkbox" name="validate" formControlIdCurso="validate" value="1"> on
-
-        <input type="submit" class="button expanded" value="Crear" [disabled]="!rForm.valid">
-
-        <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Submit</button>
-
-      </div>
-    </div>
-  </form>
-</div>
-<ng-template #forminfo>
-  <div class="form-container">
-    <div class="row comuns">
-      <h1> {{idCurso}} 
-          {{ nivel }}
-      </h1>
-      <h1> {{ salaCurso }} </h1>
-      <P> {{ nivel }}</P>
-    </div>
-  </div>
-</ng-template>
-
-
-<div class="col-md-8 offset-md-2">
+<!-- <div class="col-md-8 offset-md-2">
   <span class="anchor" id="formUserEdit"></span>
   <hr class="my-5">
 
@@ -329,16 +233,6 @@
 </div> -->
 
 
-<div *ngIf="curso">
-  <div *ngFor="let curso of curso.cursos">
-    {{ curso.idCurso }} {{ curso.nivel }} {{ curso.asignatura }} {{ curso.profesorJefe }} {{ curso.salaCurso }} {{ curso.totalAlumnos
-    }}
-  </div>
-</div>
-
-
-
-
 <!-- <div class="card m-3">
   <div class="card-body">
     <form (submit)="addTask($event)">
@@ -376,7 +270,6 @@
     </tr>
   </tbody>
 </table> -->
-
 <div *ngIf="curso">
   <div *ngFor="let curso of curso.cursos">
     {{ curso.idCurso }} {{ curso.nivel }} {{ curso.asignatura }} {{ curso.profesorJefe }} {{ curso.salaCurso }} {{ curso.totalAlumnos
