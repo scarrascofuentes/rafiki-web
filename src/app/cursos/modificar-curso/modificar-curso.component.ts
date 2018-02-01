@@ -23,13 +23,12 @@ export class ModificarCursoComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private HttpClient: HttpClient) {
     this.rForm = formBuilder.group({
-      'idCurso': [null, Validators.required],
-      'nivel': [null, Validators.required],
-      'asignatura': [null, Validators.required],
-      'profesorJefe': [null, Validators.required],
-      'salaCurso': [null, Validators.required],
-      'totalAlumnos': [null, Validators.required],
-      // 'validate': ''
+      'idCurso': [Validators.required],
+      'nivel': [Validators.required],
+      'asignatura': [Validators.required],
+      'profesorJefe': [Validators.required],
+      'salaCurso': [Validators.required],
+      'totalAlumnos': [Validators.required]
     });
     this.route.params.subscribe(res => {
       this.id = res.id;
@@ -42,14 +41,19 @@ export class ModificarCursoComponent implements OnInit {
     this.HttpClient.put(`${this.domain}/cursos/${this.id}`, put).subscribe(data => {
       console.log(put);
     });
+    // this.getCursoId();
   }
 
-  ngOnInit() {
+  getCursoId() {
     this.HttpClient.get(`${this.domain}/cursos/${this.id}`).subscribe(data => {
       // console.log(data);
       this.curso = data;
       console.log(this.curso);
     });
+  }
+
+  ngOnInit() {
+    this.getCursoId();
   }
 
 }
