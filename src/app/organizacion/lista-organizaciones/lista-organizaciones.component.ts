@@ -40,9 +40,7 @@ export class ListaOrganizacionesComponent implements OnInit {
     private organizacionService: OrganizacionService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    //this.route.params.subscribe(res => console.log(res.id));
-  }
+  ) { }
 
   ngOnInit() {
     this.getOrganizaciones();
@@ -51,24 +49,22 @@ export class ListaOrganizacionesComponent implements OnInit {
   getOrganizaciones(): void {
     this.organizacionService.getOrganizaciones()
       .subscribe(res => { 
-        this.organizaciones = res,
-        console.log(res)
+        this.organizaciones = res
       }
     )
   }
 
-  deleteOrganizacion(id , i): void{
-    const response = confirm('¿Estas seguro(a) que deseas eliminarlo?');
-    if(response) {
+  deleteOrganizacion(id, i): void {
+    const respuesta = confirm('¿ Estás seguro que deseas eliminarlo?');
+    if(respuesta){
       this.organizacionService.deleteOrganizacion(id)
         .subscribe(res => {
-            console.log(res),
-            this.organizaciones.organizacion.splice(i, 1);
+            this.organizaciones.organizacion.splice(i, 1)
         },(err) => {
           console.log(err);
         }
       )
-    } 
-  }
+    }
+  } 
 
 }

@@ -19,7 +19,6 @@ export class DetallesOrganizacionComponent implements OnInit {
   ) {  
     this.route.params.subscribe(res => {
       this.id_ = res.id;
-      //console.log(res.id)
     } )
   }
 

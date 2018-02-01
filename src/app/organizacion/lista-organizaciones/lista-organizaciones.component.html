@@ -19,9 +19,8 @@
       <td>{{ organizacion.nombre }}</td>
       <td><button type="button" class="btn btn-primary" routerLink="/organizacion/{{organizacion._id}}"> <i class="fas fa-info-circle"></i> Ver Detalles  </button></td>
       <td>
-          <button type="button" class="btn btn-primary" routerLink="/organizacion/{{organizacion._id}}/editar"> <i class="fas fa-edit"></i> Editar </button>
-          <button type="button" class="btn btn-primary" (click)="deleteOrganizacion(organizacion._id, i)"> <i class="fas fa-trash-alt"></i> Eliminar </button>
-      </td>
+        <button type="button" class="btn btn-primary" routerLink="/organizacion/{{organizacion._id}}/editar"> <i class="fas fa-edit"></i></button> /
+        <button type="button" class="btn btn-primary" (click)="deleteOrganizacion(organizacion._id, i)"> <i class="fas fa-trash-alt"></i></button>
     </tr>
   </tbody>
 </table>
