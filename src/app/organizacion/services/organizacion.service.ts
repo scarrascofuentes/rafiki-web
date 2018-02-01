@@ -11,30 +11,28 @@ const httpOptions = {
 @Injectable()
 export class OrganizacionService {
 
-  domain: string = "http://localhost:10010";
+  domain: string = "http://localhost:10010/organizaciones";
 
   constructor(private http: HttpClient) { }
 
   getOrganizaciones()  {
-    //console.log(this.http.get<Organizacion[]>(`${this.domain}/organizaciones`));
-    return this.http.get(`${this.domain}/organizaciones`)
+    return this.http.get(`${this.domain}`)
   }
 
   getOrganizacion(id: String) {
-    const url = `${this.domain}/organizaciones/${id}`;
-    //console.log(this.http.get(url))
+    const url = `${this.domain}/${id}`;
     return this.http.get(url)
   }
 
   postOrganizacion(organizacion: Object) {
-    return this.http.post(`${this.domain}/organizaciones`, organizacion)
+    return this.http.post(`${this.domain}`, organizacion)
   }
 
   updateOrganizacion(organizacion: Object, id: String) {
-    return this.http.put(`${this.domain}/organizaciones/${id}`, organizacion, httpOptions)
+    return this.http.put(`${this.domain}/${id}`, organizacion, httpOptions)
   }
 
   deleteOrganizacion(id: String) {
-    return this.http.delete(`${this.domain}/organizaciones/${id}`)
+    return this.http.delete(`${this.domain}/${id}`)
   }
 }
