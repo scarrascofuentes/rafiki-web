@@ -19,6 +19,7 @@ import { AuthenticationService } from './authentication-authorization/_services/
 import { UserService } from './authentication-authorization/_services/user.service';
 import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
+import { ListaAsignaturaComponent } from './asignatura/lista-asignatura/lista-asignatura.component';
 
 const appRoutes: Routes = [
 
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListaAsignaturaComponent
   ],
   imports: [
     BrowserModule,
