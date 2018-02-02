@@ -17,6 +17,10 @@ import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/cr
 import { ModificarOrganizacionComponent } from './organizacion/modificar-organizacion/modificar-organizacion.component';
 import { DetallesOrganizacionComponent } from './organizacion/detalles-organizacion/detalles-organizacion.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ListaEvaluacionesComponent } from './evaluacion/lista-evaluaciones/lista-evaluaciones.component';
+import { CrearEvaluacionComponent } from './evaluacion/crear-evaluacion/crear-evaluacion.component';
+import { DetallesEvaluacionComponent } from './evaluacion/detalles-evaluacion/detalles-evaluacion.component';
+import { ModificarEvaluacionComponent } from './evaluacion/modificar-evaluacion/modificar-evaluacion.component';
  
  
 @NgModule({
@@ -26,6 +30,10 @@ import { AppRoutingModule } from './/app-routing.module';
     CrearOrganizacionComponent,
     ModificarOrganizacionComponent,
     DetallesOrganizacionComponent,
+    ListaEvaluacionesComponent,
+    CrearEvaluacionComponent,
+    DetallesEvaluacionComponent,
+    ModificarEvaluacionComponent,
   ],
   imports: [
     BrowserModule,
