@@ -16,7 +16,6 @@
             <input type="text" class="form-control" name="correo" [(ngModel)]="model.correo" #correo="ngModel" required />
             <div *ngIf="f.submitted && !correo.valid" class="help-block">correo requerido!</div>
         </div>
-        
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
             <label for="password">Contraseña</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
