@@ -1,14 +1,14 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertService, UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'register.component.html'
+    templateUrl: 'editar-usuario.component.html'
 })
 
-export class RegisterComponent {
+export class EditarUsuarioComponent {
     model: any = {};
     loading = false;
 
@@ -17,12 +17,12 @@ export class RegisterComponent {
         private userService: UserService,
         private alertService: AlertService) { }
 
-    register() {
+    updateUser() {
         this.loading = true;
-        this.userService.create(this.model)
+        this.userService.update(this.model)
             .subscribe(
                 data => {
-                    this.alertService.success('Registro exitoso', true);
+                    this.alertService.success('Actualización exitosa', true);
                     this.router.navigate(['login']);
                 },
                 error => {
@@ -30,5 +30,5 @@ export class RegisterComponent {
                     this.loading = false;
                 });
     }
-   
+    
 }

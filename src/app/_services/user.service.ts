@@ -1,29 +1,43 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Routes } from '@angular/router';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 import { User } from '../_models/index';
+/** 
+ * basarme en esto para buscar usuarios de la api rest
+domain: string = "http://localhost:10010/organizaciones";
+
+**/
+
 
 @Injectable()
 export class UserService {
+    id: String;
+    domain: string = 'http://localhost:10010';
     constructor(private http: HttpClient) { }
 
-    getAll() {
-        return this.http.get<User[]>('/api/users');
+    getAll() : Observable<any>{
+        return this.http.get('http://localhost:10010/users');
     }
 
-    getById(id: number) {
-        return this.http.get('/api/users/' + id);
+  
+
+    getById(id: String) {
+        return this.http.get('http://localhost:10010/users/' + id);
     }
 
     create(user: User) {
-        return this.http.post('/api/users', user);
+        return this.http.post('http://localhost:10010/users', user);
     }
 
-    update(user: User) {
-        return this.http.put('/api/users/' + user.id, user);
+    update( put) {
+       return this.http.put(`http://localhost:10010/users/${this.id}`, put)
     }
 
-    delete(id: number) {
-        return this.http.delete('/api/users/' + id);
+    delete(id: String) {
+        return this.http.delete('http://localhost:10010/users/' + id);
     }
+
 }
