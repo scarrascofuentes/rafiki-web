@@ -14,6 +14,7 @@ domain: string = "http://localhost:10010/organizaciones";
 
 @Injectable()
 export class UserService {
+    id: String;
     domain: string = 'http://localhost:10010';
     constructor(private http: HttpClient) { }
 
@@ -24,18 +25,19 @@ export class UserService {
   
 
     getById(id: String) {
-        return this.http.get('http://localhost:10010/users' + id);
+        return this.http.get('http://localhost:10010/users/' + id);
     }
 
     create(user: User) {
         return this.http.post('http://localhost:10010/users', user);
     }
 
-    update(user: User) {
-        return this.http.put('http://localhost:10010/users', user);
+    update( put) {
+       return this.http.put(`http://localhost:10010/users/${this.id}`, put)
     }
 
     delete(id: String) {
         return this.http.delete('http://localhost:10010/users/' + id);
     }
+
 }

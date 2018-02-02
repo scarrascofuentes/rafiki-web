@@ -7,7 +7,7 @@
 
     <ul>
         <li *ngFor="let user of users">
-            {{user.nombre}}  - <a (click)="deleteUser(user._id)">Eliminar</a>
+            {{user.nombre}}  - <a (click)="deleteUser(user._id)">Eliminar</a> <!-- /=/ <a (click)="updateUser(user._id)">Editar</a> -->
             <ul style="padding:10px">
                 <li>
                     RUT: {{user.rut}}
