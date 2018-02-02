@@ -1,9 +1,23 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//Animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
+//Servicios
+import { OrganizacionService } from './organizacion/services/organizacion.service';
+
+import { ListaOrganizacionesComponent } from './organizacion/lista-organizaciones/lista-organizaciones.component';
+import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/crear-organizacion.component';
+import { ModificarOrganizacionComponent } from './organizacion/modificar-organizacion/modificar-organizacion.component';
+import { DetallesOrganizacionComponent } from './organizacion/detalles-organizacion/detalles-organizacion.component';
+import { AppRoutingModule } from './/app-routing.module';
+
 import { HttpModule } from '@angular/http'
-import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
@@ -12,7 +26,6 @@ import { ModificarCursoComponent } from './cursos/modificar-curso/modificar-curs
 import { AppRoutingModule } from './app-routing.module';
 import { DetalleCursoComponent } from './cursos/detalle-curso/detalle-curso.component';
 
-import { FormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
@@ -31,25 +44,36 @@ import { RegisterComponent } from './register/index';
 @NgModule({
   declarations: [
     AppComponent,
+    ListaOrganizacionesComponent,
+    CrearOrganizacionComponent,
+    ModificarOrganizacionComponent,
+    DetallesOrganizacionComponent,
     ListaCursosComponent,
     CrearCursoComponent,
     ModificarCursoComponent,
     DetalleCursoComponent,
-        AlertComponent,
-        HomeComponent,
-        LoginComponent,
-        RegisterComponent
+    AlertComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    ListaCursosComponent,
+    CrearCursoComponent,
+    ModificarCursoComponent,
+    DetalleCursoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpModule,
     routing
   ],
-  providers: [        
+  providers: [
+    OrganizacionService,
     AuthGuard,
     AlertService,
     AuthenticationService,
@@ -62,7 +86,7 @@ import { RegisterComponent } from './register/index';
 
         // provider used to create fake backend
         fakeBackendProvider
-    ],
+  ],
   bootstrap: [AppComponent]
 })
 

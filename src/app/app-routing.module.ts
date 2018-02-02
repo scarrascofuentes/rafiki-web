@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/crear-organizacion.component';
+import { ListaOrganizacionesComponent } from './organizacion/lista-organizaciones/lista-organizaciones.component';
+import { ModificarOrganizacionComponent } from './organizacion/modificar-organizacion/modificar-organizacion.component';
+import { DetallesOrganizacionComponent } from './organizacion/detalles-organizacion/detalles-organizacion.component';
+
 import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { CrearCursoComponent } from './cursos/crear-curso/crear-curso.component';
 import { ModificarCursoComponent } from './cursos/modificar-curso/modificar-curso.component';
