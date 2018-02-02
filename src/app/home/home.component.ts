@@ -3,6 +3,7 @@
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
 
+
 @Component({
     moduleId: module.id,
     templateUrl: 'home.component.html'
@@ -20,8 +21,11 @@ export class HomeComponent implements OnInit {
         this.loadAllUsers();
     }
 
-    deleteUser(id: number) {
+    deleteUser(id: String) {
         this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
+    }
+    updateUser(id: String) {
+        this.userService.update(id).subscribe(() => { this.loadAllUsers() });
     }
 
     private loadAllUsers() {

@@ -16,7 +16,7 @@ var UserService = /** @class */ (function () {
         this.http = http;
     }
     UserService.prototype.getAll = function () {
-        return this.http.get('/api/users');
+        return this.http.get('http://localhost:10010/users');
     };
     UserService.prototype.getById = function (id) {
         return this.http.get('/api/users/' + id);
