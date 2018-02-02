@@ -1,12 +1,33 @@
 ﻿<div class="col-md-6 col-md-offset-3">
-    <h1>Hola {{currentUser.firstName}}!</h1>
+    <h1>Hola {{currentUser.correo}}!</h1>
     <p>Estás loguead@ en Angular 5.2.2 !!</p>
     <h3>Todos los usuarios registrados:</h3>
+    <div  >
+
+
     <ul>
         <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Eliminar</a>
+            {{user.nombre}}  - <a (click)="deleteUser(user._id)">Eliminar</a>
+            <ul style="padding:10px">
+                <li>
+                    RUT: {{user.rut}}
+                </li>
+                <li>
+                    Correo: {{user.correo}} 
+                </li>
+                <li>
+                    Role: {{user.role}} 
+                </li>
+                <li>
+                    MongoDB id: {{user._id}} 
+                </li>
+            </ul> 
+           
+            <br>
         </li>
+        <p>Tu token es : {{currentUser.token}}</p>
     </ul>
+
     <p><a [routerLink]="['/login']">Cerrar sesión</a></p>
+</div>
 </div>
