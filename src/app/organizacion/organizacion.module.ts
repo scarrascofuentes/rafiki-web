@@ -7,11 +7,16 @@ import { ListaOrganizacionesComponent } from './lista-organizaciones/lista-organ
 import { CrearOrganizacionComponent } from './crear-organizacion/crear-organizacion.component';
 import { ModificarOrganizacionComponent } from './modificar-organizacion/modificar-organizacion.component';
 import { DetallesOrganizacionComponent } from './detalles-organizacion/detalles-organizacion.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     ListaOrganizacionesComponent,
