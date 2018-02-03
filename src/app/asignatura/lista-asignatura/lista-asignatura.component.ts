@@ -27,12 +27,12 @@ export class ListaAsignaturaComponent implements OnInit {
     this.httpClient.get(`${this.domain}/asignaturas`).subscribe(data => {
       // console.log(data);
       this.asignaturas = data;
-      console.log(this.asignaturas);
+      //console.log(this.asignaturas);
     });
   }
 
   deleteAsignatura(id) {
-    this.httpClient.delete(`${this.domain}/asignaturas`).subscribe(data => {
+    this.httpClient.delete(`${this.domain}/asignaturas/${id}`).subscribe(data => {
     });
   }
 
