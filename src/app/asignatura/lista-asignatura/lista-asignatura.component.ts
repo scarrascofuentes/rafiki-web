@@ -11,7 +11,7 @@ export class ListaAsignaturaComponent implements OnInit {
 
   rForm: FormGroup;
   domain: string = 'http://localhost:10010';
-  asignatura: any;
+  asignaturas: any;
 
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
     this.rForm = formBuilder.group({
@@ -23,11 +23,11 @@ export class ListaAsignaturaComponent implements OnInit {
     });
   }
 
-  getAsignatura() {
+  getAsignaturas() {
     this.httpClient.get(`${this.domain}/asignaturas`).subscribe(data => {
       // console.log(data);
-      this.asignatura = data;
-      console.log(this.asignatura);
+      this.asignaturas = data;
+      console.log(this.asignaturas);
     });
   }
 
@@ -37,7 +37,7 @@ export class ListaAsignaturaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAsignatura();
+    this.getAsignaturas();
   }
 
 }
