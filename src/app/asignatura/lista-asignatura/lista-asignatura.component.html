@@ -1,9 +1,3 @@
-<div *ngIf="asignaturas">
-  <div *ngFor="let asignatura of asignaturas.Asignaturas">
-    {{ asignatura.nombre }}
-  </div>
-</div>
-{{ asignatura }}
 <a routerLink="">
   <button type="button" class="btn btn-primary">crear-curso</button>
 </a>
@@ -13,7 +7,6 @@
       <tr align="center">
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Nivel</th>
         <th scope="col">Detalles</th>
         <th scope="col">Acciones</th>
       </tr>
@@ -22,14 +15,13 @@
       <tr *ngFor="let asignatura of asignaturas.Asignaturas" align="center">
         <th scope="row">1</th>
         <td>{{ asignatura.nombre }}</td>
-        <td>{{ curso.nivel }}</td>
         <th>
-          <button type="button" class="btn btn-info" routerLink="cursos/{{ curso._id }}"><i class="fas fa-info-circle"></i> Ver detalle</button>
+          <button type="button" class="btn btn-info" ><i class="fas fa-info-circle"></i> Ver detalle</button>
         </th>
         <td>
-          <button type="button" class="btn btn-info" routerLink="cursos/{{ curso._id }}/editar"><i class="fas fa-edit"></i> editar </button>
+          <button type="button" class="btn btn-info" ><i class="fas fa-edit"></i> editar </button>
           /
-          <button type="button" class="btn btn-info" routerLink="" (click)="deleteCurso(curso._id)"><i class="fas fa-trash-alt"></i> Eliminar </button>
+          <button type="button" class="btn btn-info" ><i class="fas fa-trash-alt"></i> Eliminar </button>
         </td>
       </tr>
     </tbody>
