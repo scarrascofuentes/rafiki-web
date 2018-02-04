@@ -7,6 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { OrganizacionModule } from './organizacion/organizacion.module';
 import { CursoModule } from './curso/curso.module';
+import { NivelModule } from './niveles/nivel.module';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,12 +20,16 @@ import { AuthenticationService } from './authentication-authorization/_services/
 import { UserService } from './authentication-authorization/_services/user.service';
 import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
+import { ListaNivelesComponent } from './niveles/lista-niveles/lista-niveles.component';
+import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
 
 const appRoutes: Routes = [
 
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'niveles', component: ListaNivelesComponent },
+  { path: 'cursos', component: ListaCursosComponent }, // momentaneo, eliminar luego y usar el modulo completo
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
@@ -36,7 +41,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListaNivelesComponent
   ],
   imports: [
     BrowserModule,
