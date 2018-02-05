@@ -1,3 +1,43 @@
-<p>
-  crear-asignatura works!
-</p>
+<div class="row">
+  <div class="col-6 col-md-2"></div>
+  <div class="col-6 col-md-8">
+    <div *ngIf="!idCurso; else forminfo">
+      <div class="card-header">
+        <h1>Crear Asignatura</h1>
+        <hr>
+        <div class="card-body">
+          <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+            <div class="form-group">
+              <label for="inputAsignatura">Nombre</label>
+              <input type="text" class="form-control" placeholder="Ingrese nombre" formControlName="nombre">
+            </div>
+            <div class="form-group">
+              <label for="inputSiglaCurso">Sigla Curso</label>
+              <input type="text" class="form-control" placeholder="Ingrese sigla" formControlName="idCurso">
+            </div>
+            <h4>Horas Pedagogicas</h4>
+            <div class="form-group">
+              <label for="inputNivel">Jornada escolar completa (anual)</label>
+              <input type="text" class="form-control" placeholder="Ingrese cantidad de horas" formControlName="horasPedagogicasConJecAnual">
+            </div>
+            <div class="form-group">
+              <label for="inputProfesorJefe">Jornada escolar completa (semanal)</label>
+              <input type="text" class="form-control" placeholder="Ingrese profesor jefe" formControlName="horasPedagogicasSinJecAnual">
+            </div>
+            <div class="form-group">
+              <label for="inputSalaCurso">Jornada escolar incompleta (anual)</label>
+              <input type="text" class="form-control" placeholder="Ingrese sala del curso" formControlName="horasPedagogicasConJecSemanal">
+            </div>
+            <div class="form-group">
+              <label for="inputTotalAlumnos">Jornada escolar incompleta (semanal)</label>
+              <input type="text" class="form-control" placeholder="Ingrese cantidad de alumnos" formControlName="horasPedagogicasSinJecSemanal">
+            </div>
+            <input type="reset" class="btn btn-secondary" value="Cancel">
+            <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Crear</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-2"></div>
+</div>
