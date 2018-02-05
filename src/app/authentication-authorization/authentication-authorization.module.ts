@@ -11,12 +11,16 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
 import { fakeBackendProvider } from './_helpers/index';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    HttpClientModule 
   ],
   declarations: [
     AlertComponent,

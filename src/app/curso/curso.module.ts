@@ -5,10 +5,15 @@ import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { CrearCursoComponent } from './crear-curso/crear-curso.component';
 import { ModificarCursoComponent } from './modificar-curso/modificar-curso.component';
 import { DetalleCursoComponent } from './detalle-curso/detalle-curso.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     ListaCursosComponent,
