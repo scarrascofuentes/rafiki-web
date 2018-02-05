@@ -25,7 +25,6 @@ export class CrearAsignaturaComponent implements OnInit {
    addPost(post) {
     // this.idCurso = post.idCurso;
     this.httpClient.post(`${this.domain}/asignaturas`, post).subscribe(data=>{
-      console.log(post);
     });
   }
 
