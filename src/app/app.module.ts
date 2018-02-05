@@ -22,6 +22,7 @@ import { fakeBackendProvider } from './authentication-authorization/_helpers/fak
 import { ListaAsignaturaComponent } from './asignatura/lista-asignatura/lista-asignatura.component';
 import { DetallesAsignaturaComponent } from './asignatura/detalles-asignatura/detalles-asignatura.component';
 import { ModificarAsignaturaComponent } from './asignatura/modificar-asignatura/modificar-asignatura.component';
+import { CrearAsignaturaComponent } from './asignatura/crear-asignatura/crear-asignatura.component';
 
 const appRoutes: Routes = [
 
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     ListaAsignaturaComponent,
     DetallesAsignaturaComponent,
-    ModificarAsignaturaComponent
+    ModificarAsignaturaComponent,
+    CrearAsignaturaComponent
   ],
   imports: [
     BrowserModule,
