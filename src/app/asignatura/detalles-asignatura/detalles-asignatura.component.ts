@@ -10,14 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class DetallesAsignaturaComponent implements OnInit {
 
   asignatura: any;
-  id: string= "5a763951a100651780fe93de"; //Borrar
+  id: string= ""; //Borrar5a763951a100651780fe93de
   domain: string = 'http://localhost:10010';
 
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) {
-    // this.route.params.subscribe(res => {
-    //   this.id = res.id;
-    //   console.log(res.id)
-    // })
+    this.route.params.subscribe(res => {
+      this.id = res.id;
+      console.log(res.id)
+    });
   }
 
   getAsignatura() {

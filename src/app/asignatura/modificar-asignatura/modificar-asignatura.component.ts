@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-modificar-asignatura',
@@ -17,15 +18,19 @@ export class ModificarAsignaturaComponent implements OnInit {
   horasPedagogicasSinJecSemanal: Number;
   domain: string = 'http://localhost:10010';
   asignatura: any;
-  id: String ="5a785f213502192ba4c584d5";  //Borrar!!!!
+  id: String ="";  //Borrar!!!!5a785f213502192ba4c584d5
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private route: ActivatedRoute) {
     this.rForm = formBuilder.group({
       'nombre': [Validators.required],
       'horasPedagogicasConJecAnual': [Validators.required],
       'horasPedagogicasSinJecAnual': [Validators.required],
       'horasPedagogicasConJecSemanal': [Validators.required],
       'horasPedagogicasSinJecSemanal': [Validators.required]
+    });
+    this.route.params.subscribe(res => {
+      this.id = res.id;
+      console.log(res.id)
     });
   }
 
