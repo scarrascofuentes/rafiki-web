@@ -32,7 +32,7 @@ export class CrearNivelComponent implements OnInit {
 
   postNivel(nivel) {
     console.log(nivel);
-    this.HttpClient.post(`${this.domain}/niveles`, nivel).subscribe(data => {
+    this.HttpClient.post(`${this.domain}/niveles/`, nivel).subscribe(data => {
       
       this.nivel = data;
       console.log(this.nivel);
