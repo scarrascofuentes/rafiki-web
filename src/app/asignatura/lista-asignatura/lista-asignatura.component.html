@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let asignatura of asignaturas.Asignaturas; let i = index" align="center">
-        <th scope="row">1</th>
+        <th scope="row">{{i+1}}</th>
         <td>{{ asignatura.nombre }}</td>
         <th>
           <button type="button" class="btn btn-info" ><i class="fas fa-info-circle"></i> Ver detalle</button>
