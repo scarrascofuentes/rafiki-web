@@ -1,3 +1,43 @@
-<p>
-  modificar-asignatura works!
-</p>
+<div class="row">
+  <div class="col-6 col-md-2"></div>
+  <div class="col-6 col-md-8">
+    <div *ngIf="!idCurso; else forminfo">
+      <div class="card-header">
+        <h1>Crear Asignatura</h1>
+        <hr>
+        <div class="card-body">
+          <form [formGroup]="rForm" (ngSubmit)="updateAsignatura(rForm.value)">
+            <div class="form-group">
+              <label for="inputAsignatura">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre" [value]="asignatura.asignaturas.nombre">
+            </div>
+            <!-- <div class="form-group">
+              <label for="inputSiglaCurso">COMPLETARR!!!!!</label>
+              <input type="text" class="form-control" placeholder="Ingrese sigla" formControlName="enfasis">
+            </div> -->
+            <h4>Horas Pedagogicas</h4>
+            <div class="form-group">
+              <label for="inputNivel">Jornada escolar completa (anual)</label>
+              <input type="number" class="form-control" formControlName="horasPedagogicasConJecAnual" [value]="asignatura.asignaturas.horasPedagogicasConJecAnual">
+            </div>
+            <div class="form-group">
+              <label for="inputProfesorJefe">Jornada escolar completa (semanal)</label>
+              <input type="number" class="form-control" formControlName="horasPedagogicasSinJecAnual" [value]="asignatura.asignaturas.horasPedagogicasConJecSemanal">
+            </div>
+            <div class="form-group">
+              <label for="inputSalaCurso">Jornada escolar incompleta (anual)</label>
+              <input type="number" class="form-control" formControlName="horasPedagogicasConJecSemanal" [value]="asignatura.asignaturas.horasPedagogicasSinJecAnual">
+            </div>
+            <div class="form-group">
+              <label for="inputTotalAlumnos">Jornada escolar incompleta (semanal)</label>
+              <input type="number" class="form-control" formControlName="horasPedagogicasSinJecSemanal" [value]="asignatura.asignaturas.horasPedagogicasSinJecSemanal">
+            </div>
+            <input type="reset" class="btn btn-secondary" value="Cancel">
+            <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Modificar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-2"></div>
+</div>
