@@ -22,6 +22,9 @@ import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.inte
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
 import { ListaNivelesComponent } from './niveles/lista-niveles/lista-niveles.component';
 import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
+import { CrearCursoComponent } from './curso/crear-curso/crear-curso.component';
+import { CrearNivelComponent } from './niveles/crear-nivel/crear-nivel.component';
+import { DetalleNivelComponent } from './niveles/detalle-nivel/detalle-nivel.component';
 
 const appRoutes: Routes = [
 
@@ -29,7 +32,11 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'niveles', component: ListaNivelesComponent },
+  { path: 'niveles/:id', component: DetalleNivelComponent  },
   { path: 'cursos', component: ListaCursosComponent }, // momentaneo, eliminar luego y usar el modulo completo
+  { path: 'cursos/crear-curso', component: CrearCursoComponent  },
+  { path: 'niveles/crear-nivel', component: CrearNivelComponent  },
+  
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
@@ -41,8 +48,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent,
-    ListaNivelesComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,8 @@ const appRoutes: Routes = [
     ),
     HttpModule,
     OrganizacionModule,
-    CursoModule
+    CursoModule,
+    NivelModule
   ],
   providers: [
     AuthGuard,
