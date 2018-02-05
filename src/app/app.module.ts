@@ -31,11 +31,12 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'niveles/crear-nivel', component: CrearNivelComponent  },
   { path: 'niveles', component: ListaNivelesComponent },
   { path: 'niveles/:id', component: DetalleNivelComponent  },
   { path: 'cursos', component: ListaCursosComponent }, // momentaneo, eliminar luego y usar el modulo completo
   { path: 'cursos/crear-curso', component: CrearCursoComponent  },
-  { path: 'niveles/crear-nivel', component: CrearNivelComponent  },
+ 
   
 
   // otherwise redirect to home
