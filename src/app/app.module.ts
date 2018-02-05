@@ -25,6 +25,8 @@ import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.componen
 import { CrearCursoComponent } from './curso/crear-curso/crear-curso.component';
 import { CrearNivelComponent } from './niveles/crear-nivel/crear-nivel.component';
 import { DetalleNivelComponent } from './niveles/detalle-nivel/detalle-nivel.component';
+import { ModificarNivelComponent } from './niveles/modificar-nivel/modificar-nivel.component';
+
 
 const appRoutes: Routes = [
 
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'niveles/crear-nivel', component: CrearNivelComponent  },
   { path: 'niveles', component: ListaNivelesComponent },
   { path: 'niveles/:id', component: DetalleNivelComponent  },
+  { path: 'niveles/:id/editar', component: ModificarNivelComponent  },
   { path: 'cursos', component: ListaCursosComponent }, // momentaneo, eliminar luego y usar el modulo completo
   { path: 'cursos/crear-curso', component: CrearCursoComponent  },
  
