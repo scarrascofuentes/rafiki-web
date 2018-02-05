@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearNivelComponent } from './crear-nivel/crear-nivel.component';
 import { DetalleNivelComponent } from './detalle-nivel/detalle-nivel.component';
+import { ModificarNivelComponent } from './modificar-nivel/modificar-nivel.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { DetalleNivelComponent } from './detalle-nivel/detalle-nivel.component';
   declarations: [
     ListaNivelesComponent,
     CrearNivelComponent,
-    DetalleNivelComponent
+    DetalleNivelComponent,
+    ModificarNivelComponent
   ],
   exports:[
     ListaNivelesComponent,
