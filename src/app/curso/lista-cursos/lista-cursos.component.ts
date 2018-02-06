@@ -18,7 +18,7 @@ export class ListaCursosComponent implements OnInit {
 
   getCursos() {
     this.HttpClient.get(`${this.domain}/cursos`).subscribe(data => {
-      //console.log(data);
+      console.log(data);
       this.curso = data;
     });
   }
