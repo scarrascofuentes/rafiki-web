@@ -33,7 +33,7 @@
             </div>
             <div class="form-group" formArrayName="enfasis">
                 <label for="inputAsignatura">Enfasis</label>
-                <button class="btn btn-secundary float-right" type="button" (click)="onAddEnfasis()">
+                <button class="btn btn-secundary float-right" type="button" (click)="addEnfasis()">
                   <i class="fas fa-plus-circle"></i> Añadir</button>
                 <div class="form-group" *ngFor="let retro of rForm.get('enfasis').controls; let i=index">
                   <label for="inputAsignatura">#{{i+1}}</label>
