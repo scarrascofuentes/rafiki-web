@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { OrganizacionService } from '../services/organizacion.service';
-import { } from ''
 
 @Component({
   selector: 'app-crear-organizacion',
@@ -27,7 +26,7 @@ export class CrearOrganizacionComponent implements OnInit {
   ) { 
     this.rForm = fb.group({
       'nombre': [null, Validators.required],
-      'rbd': [null, Validators.required, Validators.min(0), Validators.max(5)],
+      'rbd': [null, Validators.required],
       'descripcion': [null, Validators.compose([
         Validators.required, 
         Validators.minLength(10), 

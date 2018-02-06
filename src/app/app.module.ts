@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
  
 //Servicios
 import { OrganizacionService } from './organizacion/services/organizacion.service';
+import { EvaluacionService } from './evaluacion/services/evaluacion.service';
  
 import { AppComponent } from './app.component';
 import { ListaOrganizacionesComponent } from './organizacion/lista-organizaciones/lista-organizaciones.component';
@@ -43,7 +44,7 @@ import { ModificarEvaluacionComponent } from './evaluacion/modificar-evaluacion/
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [OrganizacionService],
+  providers: [OrganizacionService, EvaluacionService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

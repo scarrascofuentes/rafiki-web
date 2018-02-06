@@ -55,7 +55,7 @@ export class ListaOrganizacionesComponent implements OnInit {
   }
 
   deleteOrganizacion(id, i): void {
-    const respuesta = confirm('¿ Estás seguro que deseas eliminarlo?');
+    const respuesta = confirm('¿Estás seguro que deseas eliminarlo?');
     if(respuesta){
       this.organizacionService.deleteOrganizacion(id)
         .subscribe(res => {
