@@ -11,10 +11,17 @@
               <label for="inputAsignatura">Nombre</label>
               <input type="text" class="form-control" formControlName="nombre" [value]="asignatura.asignaturas.nombre">
             </div>
-            <!-- <div class="form-group">
-              <label for="inputSiglaCurso">COMPLETARR!!!!!</label>
-              <input type="text" class="form-control" placeholder="Ingrese sigla" formControlName="enfasis">
-            </div> -->
+            <div class="form-group" formArrayName="enfasis">
+              <label for="inputAsignatura">Enfasis</label>
+              <button class="btn btn-secundary float-right" type="button" (click)="addEnfasis()">
+                <i class="fas fa-plus-circle"></i> Añadir</button>
+              <div class="form-group" *ngFor="let retro of rForm.get('enfasis').controls; let i=index">
+                <label for="inputAsignatura">#{{i+1}}</label>
+                <div>
+                  <input type="text" class="form-control" [value]="asignatura.asignaturas.enfasis" [formControlName]="i">
+                </div>
+              </div>
+            </div>
             <h4>Horas Pedagogicas</h4>
             <div class="form-group">
               <label for="inputNivel">Jornada escolar completa (anual)</label>

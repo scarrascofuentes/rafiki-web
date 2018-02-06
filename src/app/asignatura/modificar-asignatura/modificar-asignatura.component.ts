@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,7 +18,7 @@ export class ModificarAsignaturaComponent implements OnInit {
   horasPedagogicasSinJecSemanal: Number;
   domain: string = 'http://localhost:10010';
   asignatura: any;
-  id: String ="";  //Borrar!!!!5a785f213502192ba4c584d5
+  id: String ="5a785f213502192ba4c584d5";  //Borrar!!!!5a785f213502192ba4c584d5
 
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private route: ActivatedRoute) {
     this.rForm = formBuilder.group({
@@ -26,7 +26,8 @@ export class ModificarAsignaturaComponent implements OnInit {
       'horasPedagogicasConJecAnual': [Validators.required],
       'horasPedagogicasSinJecAnual': [Validators.required],
       'horasPedagogicasConJecSemanal': [Validators.required],
-      'horasPedagogicasSinJecSemanal': [Validators.required]
+      'horasPedagogicasSinJecSemanal': [Validators.required],
+      'enfasis': this.formBuilder.array([null])
     });
     this.route.params.subscribe(res => {
       this.id = res.id;
@@ -48,6 +49,11 @@ export class ModificarAsignaturaComponent implements OnInit {
       this.asignatura = data;
       console.log(this.asignatura)
     });
+  }
+
+  addEnfasis() {
+    const control = new FormControl(null, Validators.required);
+    (<FormArray>this.rForm.get('enfasis')).push(control);
   }
 
   ngOnInit() {
