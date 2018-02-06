@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -18,7 +18,8 @@ export class CrearAsignaturaComponent implements OnInit {
       'horasPedagogicasConJecAnual': [null, Validators.required],
       'horasPedagogicasSinJecAnual': [null, Validators.required],
       'horasPedagogicasConJecSemanal': [null, Validators.required],
-      'horasPedagogicasSinJecSemanal': [null, Validators.required]
+      'horasPedagogicasSinJecSemanal': [null, Validators.required],
+      'enfasis': this.formBuilder.array([null])
     });
    }
 
@@ -28,6 +29,10 @@ export class CrearAsignaturaComponent implements OnInit {
     });
   }
 
+  addEnfasis() {
+    const control = new FormControl(null, Validators.required);
+    (<FormArray>this.rForm.get('enfasis')).push(control);
+  }
   ngOnInit() {
   }
 
