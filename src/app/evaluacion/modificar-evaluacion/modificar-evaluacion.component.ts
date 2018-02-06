@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -45,12 +45,18 @@ export class ModificarEvaluacionComponent implements OnInit {
   getEvaluacion(): void {
     this.evaluacionService.getEvaluacion(this.id)
     .subscribe(res => { 
+      console.log(res),
       this.evaluacion = res
+      
+      for (let index = 0; index < this.evaluacion.evaluacion.retroalimentacion.length; index++) {
+        const control = new FormControl(this.evaluacion.evaluacion.retroalimentacion[index],Validators.required);
+        (<FormArray>this.rForm.get('retroalimentacion')).push(control); 
+      }
     })
   }
 
   updateEvaluacion(evaluacion){
-    this.mensaje = 'Se ha modificado correctamente la evaluacion de <'+evaluacion.nombreProfesor+'>a la Base de Datos. Se le redireccionará a la pagina de inicio';
+    this.mensaje = 'Se ha modificado correctamente la evaluacion a la Base de Datos. Se le redireccionará a la pagina de inicio';
 
     this.evaluacionService.updateOrganizacion(evaluacion, this.id)
     .subscribe(res => {
@@ -62,5 +68,10 @@ export class ModificarEvaluacionComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  onAddRetro() {
+    const control = new FormControl(null,Validators.required);
+    (<FormArray>this.rForm.get('retroalimentacion')).push(control); 
   }
 }
