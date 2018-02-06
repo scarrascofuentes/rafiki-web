@@ -16,8 +16,8 @@ export class CrearEvaluacionComponent implements OnInit {
   nombreProfesor: String = '';
   evaluacion: any;
 
-  nivelesDeAprendizaje = ['Recordar', 'Comprender', 'Aplicar','Analizar','Evaluar', 'Crear'];
-  tiposDeEjecucion = ['Al azar', 'Orden numeral', 'Mayor dificultad','Menor dificultad'];
+  nivelesDeAprendizaje = ['Recordar', 'Comprender', 'Aplicar', 'Analizar', 'Evaluar', 'Crear'];
+  tiposDeEjecucion = ['Al azar', 'Orden numeral', 'Mayor dificultad', 'Menor dificultad'];
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +25,7 @@ export class CrearEvaluacionComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
     private evaluacionService: EvaluacionService
-  ) { 
+  ) {
     this.rForm = fb.group({
       'profesorAutor': [null, Validators.required],
       //'creado_fecha': [null, Validators.required],
@@ -37,28 +37,24 @@ export class CrearEvaluacionComponent implements OnInit {
     })
   }
 
-  ngOnInit(){
+  ngOnInit() { }
 
+  crearEvaluacion(evaluacion) {
+    this.mensaje = 'Se ha añadido correctamente la evaluacion de <' + evaluacion.nombreProfesor + '>a la Base de Datos. Se le redireccionará a la pagina de inicio';
+
+    this.evaluacionService.postEvaluacion(evaluacion)
+      .subscribe(res => {
+        this.evaluacion = res;
+        setTimeout(() => {
+          this.router.navigate(['/evaluaciones']);
+        }, 3000)
+      }, (err) => {
+        console.log(err);
+      });
   }
 
-  crearEvaluacion(evaluacion) { 
-    this.mensaje = 'Se ha añadido correctamente la evaluacion de <'+evaluacion.nombreProfesor+'>a la Base de Datos. Se le redireccionará a la pagina de inicio';
-
-    this.evaluacionService.postEvaluacion(evaluacion) 
-    .subscribe(res => {
-      this.evaluacion = res;
-      setTimeout(() =>{
-        this.router.navigate(['/evaluaciones']);
-      }, 3000)
-    }, (err) => {
-      console.log(err);
-    });
-  }
-
-
-  // No se ha usado por el momento
   removeRetroalimentacion(i: number) {
-    const control = <FormArray> this.rForm.controls['retroalimentacion'];
+    const control = <FormArray>this.rForm.controls['retroalimentacion'];
     control.removeAt(i)
   }
 
@@ -66,7 +62,5 @@ export class CrearEvaluacionComponent implements OnInit {
   onAddRetro() {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.rForm.get('retroalimentacion')).push(control);
-
   }
 }
- 
