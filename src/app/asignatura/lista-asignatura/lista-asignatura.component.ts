@@ -55,7 +55,7 @@ export class ListaAsignaturaComponent implements OnInit {
   deleteAsignatura(id,i) {
     this.httpClient.delete(`${this.domain}/asignaturas/${id}`).subscribe(data => {
     });
-    const respuesta = confirm('¿ Estás seguro que deseas eliminarlo?');
+    const respuesta = confirm('¿Estás seguro que deseas eliminarlo?');
     if (respuesta) {
       this.httpClient.delete(`${this.domain}/asignaturas/${id}`).subscribe(data => {
         this.asignaturas.Asignaturas.splice(i, 1)
