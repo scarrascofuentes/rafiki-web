@@ -38,8 +38,8 @@ export class ListaCursosComponent implements OnInit {
   }
 
   getCursos() {
-    this.httpClient.get(`${this.domain}/cursos`).subscribe(data => {
-      //console.log(data);
+    this.HttpClient.get(`${this.domain}/cursos`).subscribe(data => {
+      console.log(data);
       this.curso = data;
     });
   }
