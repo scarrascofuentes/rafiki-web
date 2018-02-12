@@ -18,7 +18,7 @@
               <div class="form-group" *ngFor="let retro of rForm.get('enfasis').controls; let i=index">
                 <label for="inputAsignatura">#{{i+1}}</label>
                 <div>
-                  <input type="text" class="form-control" [value]="asignatura.asignaturas.enfasis" [formControlName]="i">
+                  <input type="text" class="form-control" [value]="asignatura.asignaturas.enfasis[i]" [formControlName]="i">
                 </div>
               </div>
             </div>
