@@ -42,19 +42,19 @@ export class ListaObjetivoAprendizajeComponent implements OnInit {
     });
   }
 
-  // deleteObjAprendizaje(id,i) {
-  //   this.httpClient.delete(`${this.domain}/aprendizajes/${id}`).subscribe(data => {
-  //   });
-  //   const respuesta = confirm('¿Estás seguro que deseas eliminarlo?');
-  //   if (respuesta) {
-  //     this.httpClient.delete(`${this.domain}/aprendizajes/${id}`).subscribe(data => {
-  //       this.asignaturas.Asignaturas.splice(i, 1)
-  //     }, (err) => {
-  //       console.log(err);
-  //     }
-  //     )
-  //   }
-  // }
+  deleteObjAprendizaje(id,i) {
+    this.httpClient.delete(`${this.domain}/aprendizajes/${id}`).subscribe(data => {
+    });
+    const respuesta = confirm('¿Estás seguro que deseas eliminarlo?');
+    if (respuesta) {
+      this.httpClient.delete(`${this.domain}/aprendizajes/${id}`).subscribe(data => {
+        this.objetivosAprendizaje.objAprendizajes.splice(i, 1)
+      }, (err) => {
+        console.log(err);
+      }
+      )
+    }
+  }
 
   ngOnInit() {
     this.getObjAprendizajes();
