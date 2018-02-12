@@ -1,15 +1,36 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+
+
+// Servicios
+import { OrganizacionService } from './organizacion/services/organizacion.service';
+import { EvaluacionService } from './evaluacion/services/evaluacion.service';
+ 
+// Componentes
+import { AppComponent } from './app.component';
 
 import { OrganizacionModule } from './organizacion/organizacion.module';
+import { ListaOrganizacionesComponent } from './organizacion/lista-organizaciones/lista-organizaciones.component';
+import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/crear-organizacion.component';
+import { ModificarOrganizacionComponent } from './organizacion/modificar-organizacion/modificar-organizacion.component';
+import { DetallesOrganizacionComponent } from './organizacion/detalles-organizacion/detalles-organizacion.component';
+
+
+import { ListaEvaluacionesComponent } from './evaluacion/lista-evaluaciones/lista-evaluaciones.component';
+import { CrearEvaluacionComponent } from './evaluacion/crear-evaluacion/crear-evaluacion.component';
+import { DetallesEvaluacionComponent } from './evaluacion/detalles-evaluacion/detalles-evaluacion.component';
+import { ModificarEvaluacionComponent } from './evaluacion/modificar-evaluacion/modificar-evaluacion.component';
+
+
 import { CursoModule } from './curso/curso.module';
 
-import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './authentication-authorization/home/home.component';
 import { AuthGuard } from './authentication-authorization/_guards/auth.guard';
 import { LoginComponent } from './authentication-authorization/login/login.component';
@@ -19,17 +40,23 @@ import { AuthenticationService } from './authentication-authorization/_services/
 import { UserService } from './authentication-authorization/_services/user.service';
 import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
+ 
+@NgModule({
+  declarations: [
+    AppComponent,
+    ListaOrganizacionesComponent,
+    CrearOrganizacionComponent,
+    ModificarOrganizacionComponent,
+    DetallesOrganizacionComponent,
+    ListaEvaluacionesComponent,
+    CrearEvaluacionComponent,
+    DetallesEvaluacionComponent,
+    ModificarEvaluacionComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
+=======
 
-const appRoutes: Routes = [
-
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-
-  // otherwise redirect to home
-  { path: '**', redirectTo: '' }
-
-];
 
 @NgModule({
   declarations: [
@@ -41,6 +68,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -50,9 +81,11 @@ const appRoutes: Routes = [
     ),
     HttpModule,
     OrganizacionModule,
-    CursoModule
+    CursoModule     
   ],
   providers: [
+    OrganizacionService, 
+    EvaluacionService,
     AuthGuard,
     AlertService,
     AuthenticationService,
@@ -66,7 +99,7 @@ const appRoutes: Routes = [
     // provider used to create fake backend
     fakeBackendProvider
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }
