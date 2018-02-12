@@ -23,12 +23,14 @@ import { ListaAsignaturaComponent } from './asignatura/lista-asignatura/lista-as
 import { DetallesAsignaturaComponent } from './asignatura/detalles-asignatura/detalles-asignatura.component';
 import { ModificarAsignaturaComponent } from './asignatura/modificar-asignatura/modificar-asignatura.component';
 import { CrearAsignaturaComponent } from './asignatura/crear-asignatura/crear-asignatura.component';
+import { ListaObjetivoAprendizajeComponent } from './objetivo-aprendizaje/lista-objetivo-aprendizaje/lista-objetivo-aprendizaje.component';
 
 const appRoutes: Routes = [
 
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'aprendizajes', component: ListaObjetivoAprendizajeComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     ListaAsignaturaComponent,
     DetallesAsignaturaComponent,
     ModificarAsignaturaComponent,
-    CrearAsignaturaComponent
+    CrearAsignaturaComponent,
+    ListaObjetivoAprendizajeComponent
   ],
   imports: [
     BrowserModule,
