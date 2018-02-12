@@ -30,6 +30,7 @@ import { ModificarEvaluacionComponent } from './evaluacion/modificar-evaluacion/
 
 
 import { CursoModule } from './curso/curso.module';
+import { NivelModule } from './niveles/nivel.module';
 
 import { HomeComponent } from './authentication-authorization/home/home.component';
 import { AuthGuard } from './authentication-authorization/_guards/auth.guard';
@@ -40,6 +41,14 @@ import { AuthenticationService } from './authentication-authorization/_services/
 import { UserService } from './authentication-authorization/_services/user.service';
 import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
+import { ListaNivelesComponent } from './niveles/lista-niveles/lista-niveles.component';
+import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
+import { CrearCursoComponent } from './curso/crear-curso/crear-curso.component';
+import { CrearNivelComponent } from './niveles/crear-nivel/crear-nivel.component';
+import { DetalleNivelComponent } from './niveles/detalle-nivel/detalle-nivel.component';
+import { ModificarNivelComponent } from './niveles/modificar-nivel/modificar-nivel.component';
+import { ErroresRutasComponent } from './errores-rutas/errores-rutas.component';
+
 
 
 import { ListaActividadesComponent } from './actividad/lista-actividades/lista-actividades.component';
@@ -54,7 +63,17 @@ const appRoutes: Routes = [
 
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'path-error', component: ErroresRutasComponent  },
   { path: 'register', component: RegisterComponent },
+  { path: 'niveles/crear-nivel', component: CrearNivelComponent  },
+  { path: 'niveles', component: ListaNivelesComponent },
+  { path: 'niveles/:id', component: DetalleNivelComponent  },
+  { path: 'niveles/:id/editar', component: ModificarNivelComponent  },
+  { path: 'cursos', component: ListaCursosComponent }, // momentaneo, eliminar luego y usar el modulo completo
+  { path: 'cursos/crear-curso', component: CrearCursoComponent  },
+  { path: 'path-error', component: ErroresRutasComponent  },
+
+  
 
 
   //ACTIVIDAD
@@ -62,10 +81,7 @@ const appRoutes: Routes = [
   { path: 'actividades/crear', component: CrearActividadComponent }, 
   { path: 'actividades/:id', component: DetallesActividadComponent },
   { path: 'actividades/:id/editar', component: ModificarActividadComponent },
-
-
-  // otherwise redirect to home
-  { path: '**', redirectTo: 'erroresRutas' },
+   { path: '**', redirectTo: 'path-error' }
 
 ];
  
@@ -83,6 +99,7 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    ErroresRutasComponent 
     ListaActividadesComponent,
     CrearActividadComponent,
     DetallesActividadComponent,
@@ -104,7 +121,8 @@ const appRoutes: Routes = [
     ),
     HttpModule,
     OrganizacionModule,
-    CursoModule     
+    CursoModule,
+    NivelModule
   ],
   providers: [
     OrganizacionService, 
