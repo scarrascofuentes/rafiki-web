@@ -40,6 +40,34 @@ import { AuthenticationService } from './authentication-authorization/_services/
 import { UserService } from './authentication-authorization/_services/user.service';
 import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
+
+
+import { ListaActividadesComponent } from './actividad/lista-actividades/lista-actividades.component';
+
+import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
+import { CrearActividadComponent } from './actividad/crear-actividad/crear-actividad.component';
+import { DetallesActividadComponent } from './actividad/detalles-actividad/detalles-actividad.component';
+import { ModificarActividadComponent } from './actividad/modificar-actividad/modificar-actividad.component';
+
+
+const appRoutes: Routes = [
+
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+
+  //ACTIVIDAD
+  { path: 'actividades', component: ListaActividadesComponent },
+  { path: 'actividades/crear', component: CrearActividadComponent }, 
+  { path: 'actividades/:id', component: DetallesActividadComponent },
+  { path: 'actividades/:id/editar', component: ModificarActividadComponent },
+
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: 'erroresRutas' },
+
+];
  
 @NgModule({
   declarations: [
@@ -54,16 +82,11 @@ import { fakeBackendProvider } from './authentication-authorization/_helpers/fak
     ModificarEvaluacionComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
-=======
-
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListaActividadesComponent,
+    CrearActividadComponent,
+    DetallesActividadComponent,
+    ModificarActividadComponent
   ],
   imports: [
     BrowserModule,
@@ -76,8 +99,8 @@ import { fakeBackendProvider } from './authentication-authorization/_helpers/fak
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
+      //{ enableTracing: true } // <-- debugging purposes only
     ),
     HttpModule,
     OrganizacionModule,
