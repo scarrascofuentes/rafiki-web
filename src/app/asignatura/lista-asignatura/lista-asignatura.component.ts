@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Routes } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 
 @Component({
-  selector: 'app-lista-cursos',
-  templateUrl: './lista-cursos.component.html',
-  styleUrls: ['./lista-cursos.component.css'],
+  selector: 'app-lista-asignatura',
+  templateUrl: './lista-asignatura.component.html',
+  styleUrls: ['./lista-asignatura.component.css'],
   animations: [
     trigger('animation', [
       transition('* => *', [
@@ -28,35 +28,37 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
     ])
   ]
 })
+export class ListaAsignaturaComponent implements OnInit {
 
-export class ListaCursosComponent implements OnInit {
-
+  rForm: FormGroup;
   domain: string = 'http://localhost:10010';
-  curso: any;
+  asignaturas: any;
 
-  constructor(private httpClient: HttpClient) {
-  }
-
-  getCursos() {
-    this.HttpClient.get(`${this.domain}/cursos`).subscribe(data => {
-      console.log(data);
-      this.curso = data;
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
+    this.rForm = formBuilder.group({
+      'nombre': [null, Validators.required],
+      'horasPedagogicasConJecAnual': [null, Validators.required],
+      'horasPedagogicasSinJecAnual': [null, Validators.required],
+      'horasPedagogicasConJecSemanal': [null, Validators.required],
+      'horasPedagogicasSinJecSemanal': [null, Validators.required]
     });
   }
-  // deleteCurso(id){
-  //   this.httpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
-  //     //console.log(data);
-  //     this.ngOnInit();
-  //   });
-  // }
 
-  deleteCurso(id,i) {
-    this.httpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
+  getAsignaturas() {
+    this.httpClient.get(`${this.domain}/asignaturas`).subscribe(data => {
+      // console.log(data);
+      this.asignaturas = data;
+      //console.log(this.asignaturas);
+    });
+  }
+
+  deleteAsignatura(id,i) {
+    this.httpClient.delete(`${this.domain}/asignaturas/${id}`).subscribe(data => {
     });
     const respuesta = confirm('¿Estás seguro que deseas eliminarlo?');
     if (respuesta) {
-      this.httpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
-        this.curso.cursos.splice(i, 1)
+      this.httpClient.delete(`${this.domain}/asignaturas/${id}`).subscribe(data => {
+        this.asignaturas.Asignaturas.splice(i, 1)
       }, (err) => {
         console.log(err);
       }
@@ -65,7 +67,7 @@ export class ListaCursosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCursos();
+    this.getAsignaturas();
   }
 
 }

@@ -41,6 +41,12 @@ import { AuthenticationService } from './authentication-authorization/_services/
 import { UserService } from './authentication-authorization/_services/user.service';
 import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
+
+import { ListaAsignaturaComponent } from './asignatura/lista-asignatura/lista-asignatura.component';
+import { DetallesAsignaturaComponent } from './asignatura/detalles-asignatura/detalles-asignatura.component';
+import { ModificarAsignaturaComponent } from './asignatura/modificar-asignatura/modificar-asignatura.component';
+import { CrearAsignaturaComponent } from './asignatura/crear-asignatura/crear-asignatura.component';
+
 import { ListaNivelesComponent } from './niveles/lista-niveles/lista-niveles.component';
 import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
 import { CrearCursoComponent } from './curso/crear-curso/crear-curso.component';
@@ -99,6 +105,10 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    ListaAsignaturaComponent,
+    DetallesAsignaturaComponent,
+    ModificarAsignaturaComponent,
+    CrearAsignaturaComponent
     ErroresRutasComponent 
     ListaActividadesComponent,
     CrearActividadComponent,
