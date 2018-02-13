@@ -26,6 +26,7 @@ import { CrearAsignaturaComponent } from './asignatura/crear-asignatura/crear-as
 import { ListaObjetivoAprendizajeComponent } from './objetivo-aprendizaje/lista-objetivo-aprendizaje/lista-objetivo-aprendizaje.component';
 import { DetalleObjetivoAprendizajeComponent } from './objetivo-aprendizaje/detalle-objetivo-aprendizaje/detalle-objetivo-aprendizaje.component';
 import { CrearObjetivoAprendizajeComponent } from './objetivo-aprendizaje/crear-objetivo-aprendizaje/crear-objetivo-aprendizaje.component';
+import { ModificarObjetivoAprendizajeComponent } from './objetivo-aprendizaje/modificar-objetivo-aprendizaje/modificar-objetivo-aprendizaje.component';
 
 const appRoutes: Routes = [
 
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'aprendizajes', component: ListaObjetivoAprendizajeComponent },
   { path: 'aprendizajes/crear', component: CrearObjetivoAprendizajeComponent },
   { path: 'aprendizajes/:id', component: DetalleObjetivoAprendizajeComponent },
+  { path: 'aprendizajes/:id/editar', component: ModificarObjetivoAprendizajeComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     CrearAsignaturaComponent,
     ListaObjetivoAprendizajeComponent,
     DetalleObjetivoAprendizajeComponent,
-    CrearObjetivoAprendizajeComponent
+    CrearObjetivoAprendizajeComponent,
+    ModificarObjetivoAprendizajeComponent
   ],
   imports: [
     BrowserModule,
