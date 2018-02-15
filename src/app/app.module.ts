@@ -46,6 +46,10 @@ import { ListaAsignaturaComponent } from './asignatura/lista-asignatura/lista-as
 import { DetallesAsignaturaComponent } from './asignatura/detalles-asignatura/detalles-asignatura.component';
 import { ModificarAsignaturaComponent } from './asignatura/modificar-asignatura/modificar-asignatura.component';
 import { CrearAsignaturaComponent } from './asignatura/crear-asignatura/crear-asignatura.component';
+import { ListaObjetivoAprendizajeComponent } from './objetivo-aprendizaje/lista-objetivo-aprendizaje/lista-objetivo-aprendizaje.component';
+import { DetalleObjetivoAprendizajeComponent } from './objetivo-aprendizaje/detalle-objetivo-aprendizaje/detalle-objetivo-aprendizaje.component';
+import { CrearObjetivoAprendizajeComponent } from './objetivo-aprendizaje/crear-objetivo-aprendizaje/crear-objetivo-aprendizaje.component';
+import { ModificarObjetivoAprendizajeComponent } from './objetivo-aprendizaje/modificar-objetivo-aprendizaje/modificar-objetivo-aprendizaje.component';
 
 import { ListaNivelesComponent } from './niveles/lista-niveles/lista-niveles.component';
 import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
@@ -71,6 +75,10 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'path-error', component: ErroresRutasComponent  },
   { path: 'register', component: RegisterComponent },
+  { path: 'aprendizajes', component: ListaObjetivoAprendizajeComponent },
+  { path: 'aprendizajes/crear', component: CrearObjetivoAprendizajeComponent },
+  { path: 'aprendizajes/:id', component: DetalleObjetivoAprendizajeComponent },
+  { path: 'aprendizajes/:id/editar', component: ModificarObjetivoAprendizajeComponent },
   { path: 'niveles/crear-nivel', component: CrearNivelComponent  },
   { path: 'niveles', component: ListaNivelesComponent },
   { path: 'niveles/:id', component: DetalleNivelComponent  },
@@ -108,7 +116,11 @@ const appRoutes: Routes = [
     ListaAsignaturaComponent,
     DetallesAsignaturaComponent,
     ModificarAsignaturaComponent,
-    CrearAsignaturaComponent
+    CrearAsignaturaComponent,
+    ListaObjetivoAprendizajeComponent,
+    DetalleObjetivoAprendizajeComponent,
+    CrearObjetivoAprendizajeComponent,
+    ModificarObjetivoAprendizajeComponent
     ErroresRutasComponent 
     ListaActividadesComponent,
     CrearActividadComponent,
