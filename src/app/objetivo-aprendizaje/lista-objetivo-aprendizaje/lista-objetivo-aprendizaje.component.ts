@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Routes } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 
 @Component({
-  selector: 'app-lista-cursos',
-  templateUrl: './lista-cursos.component.html',
-  styleUrls: ['./lista-cursos.component.css'],
+  selector: 'app-lista-objetivo-aprendizaje',
+  templateUrl: './lista-objetivo-aprendizaje.component.html',
+  styleUrls: ['./lista-objetivo-aprendizaje.component.css'],
   animations: [
     trigger('animation', [
       transition('* => *', [
@@ -28,35 +27,28 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
     ])
   ]
 })
-
-export class ListaCursosComponent implements OnInit {
+export class ListaObjetivoAprendizajeComponent implements OnInit {
 
   domain: string = 'http://localhost:10010';
-  curso: any;
+  objetivosAprendizaje: any;
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) { }
 
-  getCursos() {
-    this.HttpClient.get(`${this.domain}/cursos`).subscribe(data => {
-      console.log(data);
-      this.curso = data;
+  getObjAprendizajes() {
+    this.httpClient.get(`${this.domain}/aprendizajes`).subscribe(data => {
+      // console.log(data);
+      this.objetivosAprendizaje = data;
+      console.log(this.objetivosAprendizaje);
     });
   }
-  // deleteCurso(id){
-  //   this.httpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
-  //     //console.log(data);
-  //     this.ngOnInit();
-  //   });
-  // }
 
-  deleteCurso(id,i) {
-    this.httpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
+  deleteObjAprendizaje(id,i) {
+    this.httpClient.delete(`${this.domain}/aprendizajes/${id}`).subscribe(data => {
     });
     const respuesta = confirm('¿Estás seguro que deseas eliminarlo?');
     if (respuesta) {
-      this.httpClient.delete(`${this.domain}/cursos/${id}`).subscribe(data => {
-        this.curso.cursos.splice(i, 1)
+      this.httpClient.delete(`${this.domain}/aprendizajes/${id}`).subscribe(data => {
+        this.objetivosAprendizaje.objAprendizajes.splice(i, 1)
       }, (err) => {
         console.log(err);
       }
@@ -65,7 +57,7 @@ export class ListaCursosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCursos();
+    this.getObjAprendizajes();
   }
 
 }
