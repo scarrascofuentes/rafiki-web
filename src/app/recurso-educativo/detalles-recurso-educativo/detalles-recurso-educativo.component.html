@@ -1,0 +1,62 @@
+<h1>Detalle de Recurso Educativo</h1>
+
+<div id="accordion" *ngIf="recursoEducativo">
+
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Recurso Educativo
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <div class="table-responsive-md">
+          <table class="table no-border">
+            <tr>
+              <th scope="row">Titulo:</th>
+              <td>{{ recursoEducativo.recursoEducativo.titulo }}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Descripción:</th>
+              <td>{{ recursoEducativo.recursoEducativo.descripcion}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Asignatura:</th>
+              <td>{{ recursoEducativo.recursoEducativo.asignatura}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Nivel:</th>
+              <td>{{ recursoEducativo.recursoEducativo.nivel }}</td>
+            </tr>  
+
+            <tr>
+              <th scope="row">Tipo de Recurso:</th>
+              <td>{{ recursoEducativo.recursoEducativo.tipoRecurso }}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Autor:</th>
+              <td>{{ recursoEducativo.recursoEducativo.autor}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Links:</th>
+            </tr>
+
+            <tr *ngFor=" let links of recursoEducativo.recursoEducativo.links">
+              <th scope="row"></th>
+              <td>{{ links }}</td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
