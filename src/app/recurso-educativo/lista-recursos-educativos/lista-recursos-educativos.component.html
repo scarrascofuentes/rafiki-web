@@ -1,0 +1,28 @@
+<div class="col-sm-offset-2 col-sm-10">
+  <button type="button " class="btn btn-primary" routerLink="/recursosEducativos/crear">Crear Recurso Educativo</button>
+</div>
+<br>
+
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Asignatura</th>
+      <th scope="col">Nivel</th>
+      <th scope="col">Detalles</th>
+      <th scope="col">Editar/Eliminar</th>
+    </tr>
+  </thead>
+  
+  <tbody *ngIf="recursoEducativo" [@animation]="recursoEducativo.recursosEducativos.length">
+    <tr *ngFor="let recursoEducativo of recursoEducativo.recursosEducativos; let i = index">
+      <th scope="row">{{ recursoEducativo.asignatura }}</th>
+      <td>{{ recursoEducativo.nivel }}</td>
+      <td><button type="button" class="btn btn-primary" routerLink="/recursosEducativos/{{recursoEducativo._id}}"> <i class="fas fa-info-circle"></i> Ver Detalles  </button></td>
+      <td>
+        <button type="button" class="btn btn-primary" routerLink="/recursosEducativos/{{recursoEducativo._id}}/editar"> <i class="fas fa-edit"></i></button> /
+        <button type="button" class="btn btn-primary" (click)="deleteRecursoEducativo(recursoEducativo._id)"> <i class="fas fa-trash-alt"></i></button>
+    </tr>
+  </tbody>
+</table>
