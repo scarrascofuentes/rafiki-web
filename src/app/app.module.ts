@@ -21,11 +21,17 @@ import { JwtInterceptor } from './authentication-authorization/_helpers/jwt.inte
 import { fakeBackendProvider } from './authentication-authorization/_helpers/fake-backend';
 import { ListaActividadesComponent } from './actividad/lista-actividades/lista-actividades.component';
 
-
+//ACTIVIDAD
 import { ListaCursosComponent } from './curso/lista-cursos/lista-cursos.component';
 import { CrearActividadComponent } from './actividad/crear-actividad/crear-actividad.component';
 import { DetallesActividadComponent } from './actividad/detalles-actividad/detalles-actividad.component';
 import { ModificarActividadComponent } from './actividad/modificar-actividad/modificar-actividad.component';
+
+//RECURSO EDUCATIVO
+import { ListaRecursosEducativosComponent } from './recurso-educativo/lista-recursos-educativos/lista-recursos-educativos.component';
+import { ModificarRecursoEducativoComponent } from './recurso-educativo/modificar-recurso-educativo/modificar-recurso-educativo.component';
+import { CrearRecursoEducativoComponent } from './recurso-educativo/crear-recurso-educativo/crear-recurso-educativo.component';
+import { DetallesRecursoEducativoComponent } from './recurso-educativo/detalles-recurso-educativo/detalles-recurso-educativo.component';
 
 
 const appRoutes: Routes = [
@@ -41,6 +47,12 @@ const appRoutes: Routes = [
   { path: 'actividades/:id', component: DetallesActividadComponent },
   { path: 'actividades/:id/editar', component: ModificarActividadComponent },
 
+  //RECURSO EDUCATIVO
+  { path: 'recursosEducativos', component: ListaRecursosEducativosComponent },
+  { path: 'recursosEducativos/:id/editar', component: ModificarRecursoEducativoComponent },
+  { path: 'recursosEducativos/crear', component: CrearRecursoEducativoComponent }, 
+  { path: 'recursosEducativos/:id', component: DetallesRecursoEducativoComponent },
+
 
   // otherwise redirect to home
   { path: '**', redirectTo: 'erroresRutas' },
@@ -53,10 +65,18 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+
+    //ACTIVIDAD
     ListaActividadesComponent,
     CrearActividadComponent,
     DetallesActividadComponent,
-    ModificarActividadComponent
+    ModificarActividadComponent,
+
+    //RECURSO EDUCATIVO
+    ListaRecursosEducativosComponent,
+    ModificarRecursoEducativoComponent,
+    CrearRecursoEducativoComponent,
+    DetallesRecursoEducativoComponent
   ],
   imports: [
     BrowserModule,
